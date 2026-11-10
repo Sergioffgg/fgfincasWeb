@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>fg fincas | Inicio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@500&display=swap" rel="stylesheet">
+  
+
+  <link rel="stylesheet" href="static/styles.css">
+
+</head>
+<body>
+
+<!-- NAVBAR SUPERIOR -->
+<nav class="glass-nav nav-top" id="navbar">
+  
+  <!-- LOGO/ICONO (Cambia de imagen según el estado con CSS) -->
+  <a href="#inicio" class="nav-logo-link">
+    <!-- Imagen para estado anclado arriba (cuadrada transparente) -->
+    <img src="img/logo-cuadrado.png" alt="FG Fincas" class="logo-img logo-flat">
+    <!-- Imagen para estado pastilla flotante (circular) -->
+    <img src="img/logo-circulo.png" alt="FG Fincas" class="logo-img logo-circle">
+  </a>
+
+  <!-- ENLACES DE NAVEGACIÓN (Solo texto limpio, sin flechas) -->
+  <div class="nav-links" id="navLinks">
+    <a href="#inicio">Inicio</a>
+    <a href="#noticias">Noticias</a>
+    <a href="#documentos">Documentos</a>
+    <a href="#contacto">Contacto</a>
+  </div>
+
+  <!-- BOTÓN DE 3 LÍNEAS / X (Móvil) -->
+  <button class="glass-burger-btn" id="burgerBtn" aria-label="Abrir Menú">
+    <svg class="icon-burger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+    <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <line x1="18" y1="6" x2="6" y2="18"></line>
+      <line x1="6" y1="6" x2="18" y2="18"></line>
+    </svg>
+  </button>
+</nav>
+
+<!-- SCRIPT DE INTERACCIÓN Y COLAPSO -->
+<script>
+  const navbar = document.getElementById('navbar');
+  const burgerBtn = document.getElementById('burgerBtn');
+  const navItems = document.querySelectorAll('.nav-links a');
+
+  // Detectar scroll para cambiar la forma del menú
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      navbar.classList.remove('nav-top');
+      navbar.classList.add('nav-floating');
+    } else {
+      navbar.classList.remove('nav-floating');
+      navbar.classList.add('nav-top');
+      navbar.classList.remove('menu-open');
+    }
+  });
+
+  // Abrir / Cerrar menú al pulsar el botón
+  burgerBtn.addEventListener('click', () => {
+    navbar.classList.toggle('menu-open');
+  });
+
+  // AUTOCOLAPSO: Al hacer clic en un enlace en móvil, cierra el menú
+  navItems.forEach(item => {
+    item.addEventListener('click', () => {
+      navbar.classList.remove('menu-open');
+    });
+  });
+</script>
+
+  <!-- FONDO FIJO CON LA IMAGEN -->
+  <div class="fixed-bg" id="inicio"></div>
+
+  <!-- TARJETA GRANATE QUE SUBE AL HACER SCROLL -->
+  <div class="granate-card">
+    
+    <!-- Texto principal flotando libre (Aplica la fuente .woff2) -->
+    <div class="hero-brand">
+    
+      <h1 class="brand-title">
+        <span class="word-main">fg</span>
+        <div class="brand-secondary">
+          <span class="word-sub">fincas</span>
+          
+          <!-- SUBTÍTULO CON REVELADO MÁSCARA -->
+          <div class="subtitle-wrapper">
+            <p class="brand-subtitle">Gestión de confianza para tu hogar.</p>
+            <div class="reveal-line"></div>
+          </div>
+        </div>
+      </h1>
+
+  </div>
+
+    <!-- Forma diagonal granate -->
+    <div class="card-wedge"></div>
+
+    <!-- Cuerpo de la tarjeta -->
+    <div class="card-body" id="noticias">
+      <h2>Comunidades</h2>
+      <p class="section-subtitle">+35</p>
+      <p>
+        Nos encargamos de la administración completa de tu propiedad, optimizando los gastos comunitarios y garantizando el cumplimiento de la normativa vigente. Gestionamos incidentes de forma inmediata y ofrecemos comunicación directa con los propietarios.
+      </p>
+    </div>
+
+  </div>
+
+</body>
+</html>
