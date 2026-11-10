@@ -21,17 +21,17 @@
 <!-- NAVBAR SUPERIOR -->
 <nav class="glass-nav nav-top" id="navbar">
   
-  <!-- LOGO/ICONO (Cambia de imagen según el estado con CSS) -->
-  <a href="#inicio" class="nav-logo-link">
-    <!-- Imagen para estado anclado arriba (cuadrada transparente) -->
-    <img src="img/logo-cuadrado.png" alt="FG Fincas" class="logo-img logo-flat">
-    <!-- Imagen para estado pastilla flotante (circular) -->
-    <img src="img/logo-circulo.png" alt="FG Fincas" class="logo-img logo-circle">
+  <!-- LOGO/ICONO -->
+  <a href="#" class="nav-logo-link" aria-label="Ir al inicio">
+    <span class="nav-logo-text">fg fincas</span>
+    <div class="logo-circle-wrapper">
+      <img src="static/images/Profile_picture_logo.png" alt="FG Fincas" class="logo-img-circle">
+    </div>
   </a>
 
   <!-- ENLACES DE NAVEGACIÓN (Solo texto limpio, sin flechas) -->
   <div class="nav-links" id="navLinks">
-    <a href="#inicio">Inicio</a>
+    <a href="#">Inicio</a>
     <a href="#noticias">Noticias</a>
     <a href="#documentos">Documentos</a>
     <a href="#contacto">Contacto</a>
@@ -57,7 +57,7 @@
   const burgerBtn = document.getElementById('burgerBtn');
   const navItems = document.querySelectorAll('.nav-links a');
 
-  // Detectar scroll para cambiar la forma del menú
+  // Detectar scroll para alternar estados
   window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
       navbar.classList.remove('nav-top');
@@ -69,12 +69,18 @@
     }
   });
 
-  // Abrir / Cerrar menú al pulsar el botón
+  // Botón de 3 líneas / X
   burgerBtn.addEventListener('click', () => {
-    navbar.classList.toggle('menu-open');
+    if (window.scrollY <= 50) {
+      window.scrollTo({ top: 55, behavior: 'smooth' });
+      setTimeout(() => {
+        navbar.classList.add('menu-open');
+      }, 150);
+    } else {
+      navbar.classList.toggle('menu-open');
+    }
   });
 
-  // AUTOCOLAPSO: Al hacer clic en un enlace en móvil, cierra el menú
   navItems.forEach(item => {
     item.addEventListener('click', () => {
       navbar.classList.remove('menu-open');
