@@ -183,16 +183,294 @@
       <div class="section-divider-6deg"></div>
       
       <section class="white-section" id="noticias">
-        <div class="section-header-center">
-          <h2 class="section-title-dark">Anuncios y Novedades</h2>
-          <p class="section-subtitle-dark">Información relevante, normativa y noticias.</p>
+
+        <!-- SECCIÓN BLANCA DE NOTICIAS Y NORMATIVA -->
+        <section class="white-section" id="noticias">
+          <div class="section-header-center">
+            <h2 class="section-title-dark">Anuncios y Novedades</h2>
+            <p class="section-subtitle-dark">Información relevante, normativa y novedades para tu comunidad.</p>
+          </div>
+
+          <!-- CARRUSEL HORIZONTAL NATIVO -->
+          <div class="news-carousel-wrapper">
+            <div class="carousel-controls-pc">
+              <button class="carousel-arrow prev-btn" id="carouselPrev" aria-label="Anterior">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="19" y1="12" x2="5" y2="12"></line>
+                  <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+              </button>
+              <button class="carousel-arrow next-btn" id="carouselNext" aria-label="Siguiente">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+            </div>
+
+            <div class="news-carousel" id="newsCarousel">
+              <!-- TARJETA 1 -->
+              <article class="news-card">
+                <div class="news-preview">
+                  <span class="pdf-badge">PDF</span>
+                  <img src="static/images/oficinab&w.png" alt="Vista previa normativa" class="news-doc-img">
+                  <div class="news-actions-overlay">
+                    <a href="docs/normativa-1.pdf" target="_blank" rel="noopener" class="action-btn btn-open">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                      </svg>
+                      Abrir
+                    </a>
+                    <a href="docs/normativa-1.pdf" download class="action-btn btn-download">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                      </svg>
+                      Descargar
+                    </a>
+                  </div>
+                </div>
+                <div class="news-glass-body">
+                  <time class="news-date">21 Diciembre 2026</time>
+                  <h3 class="news-title">Creación de acometidas como normativa 2026</h3>
+                  <div class="news-tags">
+                    <span class="news-tag">Normativa</span>
+                    <span class="news-tag">Construcción</span>
+                  </div>
+                </div>
+              </article>
+
+              <!-- TARJETA 2 -->
+              <article class="news-card">
+                <div class="news-preview">
+                  <span class="pdf-badge">PDF</span>
+                  <img src="static/images/Fachadasb&w.png" alt="Vista previa subvenciones" class="news-doc-img">
+                  <div class="news-actions-overlay">
+                    <a href="docs/normativa-2.pdf" target="_blank" rel="noopener" class="action-btn btn-open">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                      </svg>
+                      Abrir
+                    </a>
+                    <a href="docs/normativa-2.pdf" download class="action-btn btn-download">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                      </svg>
+                      Descargar
+                    </a>
+                  </div>
+                </div>
+                <div class="news-glass-body">
+                  <time class="news-date">14 Noviembre 2026</time>
+                  <h3 class="news-title">Ayudas a la rehabilitación energética en edificios</h3>
+                  <div class="news-tags">
+                    <span class="news-tag">Subvenciones</span>
+                    <span class="news-tag">Eficiencia</span>
+                  </div>
+                </div>
+              </article>
+
+              <!-- TARJETA 3 (URGENTE) -->
+              <article class="news-card is-urgent">
+                <div class="news-preview">
+                  <span class="pdf-badge">PDF</span>
+                  <img src="static/images/sellob&w.png" alt="Vista previa circular" class="news-doc-img">
+                  <div class="news-actions-overlay">
+                    <a href="docs/normativa-3.pdf" target="_blank" rel="noopener" class="action-btn btn-open">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                      </svg>
+                      Abrir
+                    </a>
+                    <a href="docs/normativa-3.pdf" download class="action-btn btn-download">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                      </svg>
+                      Descargar
+                    </a>
+                  </div>
+                </div>
+                <div class="news-glass-body">
+                  <time class="news-date">02 Noviembre 2026</time>
+                  <h3 class="news-title">Modificación Ley de Propiedad Horizontal: Alquiler turístico</h3>
+                  <div class="news-tags">
+                    <span class="news-tag">Urgente</span>
+                    <span class="news-tag">Legal</span>
+                  </div>
+                </div>
+              </article>
+
+              <!-- TARJETA 4 -->
+              <article class="news-card">
+                <div class="news-preview">
+                  <span class="pdf-badge">PDF</span>
+                  <img src="static/images/oficinab&w.png" alt="Vista previa mantenimiento" class="news-doc-img">
+                  <div class="news-actions-overlay">
+                    <a href="docs/normativa-4.pdf" target="_blank" rel="noopener" class="action-btn btn-open">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                      </svg>
+                      Abrir
+                    </a>
+                    <a href="docs/normativa-4.pdf" download class="action-btn btn-download">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                      </svg>
+                      Descargar
+                    </a>
+                  </div>
+                </div>
+                <div class="news-glass-body">
+                  <time class="news-date">18 Octubre 2026</time>
+                  <h3 class="news-title">Protocolo de revisión obligatoria de calderas comunitarias</h3>
+                  <div class="news-tags">
+                    <span class="news-tag">Mantenimiento</span>
+                    <span class="news-tag">Circular</span>
+                  </div>
+                </div>
+              </article>
+
+              <!-- NODO FINAL: BOTÓN CIRCULAR "VER TODO" -->
+              <div class="carousel-end-cta" id="carouselEndCta">
+                <a href="noticias.html" class="view-all-link" id="viewAllTrigger">
+                  <span class="view-all-label">Ver todo</span>
+                  
+                  <div class="view-all-circle">
+                    <svg class="progress-ring" width="96" height="96" viewBox="0 0 96 96">
+                      <circle class="progress-ring-bg" cx="48" cy="48" r="44" />
+                      <circle class="progress-ring-fill" id="springProgressCircle" cx="48" cy="48" r="44" />
+                    </svg>
+                    
+                    <svg class="view-all-arrow" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </div>
+
+                  <span class="spring-hint">Mantén deslizando</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      <!-- Si script.js está junto a index.html déjalo así; si está en static/, usa src="static/script.js" -->
+      <script src="script.js"></script>
+
+
+      <section class="services-section" id="servicios">
+        
+        <div class="section-header-center services-header">
+          <h2 class="section-title-light">Nuestros Servicios</h2>
+          <p class="section-subtitle-light">Soluciones integrales adaptadas a las necesidades de cada comunidad y propietario.</p>
         </div>
 
+        <div class="services-stack">
 
+          <!-- SERVICIO 01 -->
+          <article class="service-row row-01">
+            <div class="service-media">
+              <img src="static/images/escritorio.png" alt="Administración de Fincas">
+            </div>
+            <div class="service-glass glass-light">
+              <div class="service-text-box">
+                <span class="service-step-bg">01</span>
+                <h3 class="service-title">Gestión Económica y Administrativa</h3>
+                <p class="service-desc">
+                  Llevamos las cuentas de tu comunidad con claridad absoluta: presupuestos comprensibles, liquidaciones detalladas y control riguroso de cada movimiento. Nos encargamos además de custodiar la documentación, convocar juntas y ejecutar cada acuerdo con orden y transparencia.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- SERVICIO 02 -->
+          <article class="service-row row-02 row-reverse">
+            <div class="service-media">
+              <img src="static/images/fachada_arboles.jfif" alt="Mantenimiento y Obras">
+            </div>
+            <div class="service-glass glass-granate">
+              <div class="service-text-box">
+                <span class="service-step-bg">02</span>
+                <h3 class="service-title">Gestión Laboral de la Comunidad</h3>
+                <p class="service-desc">
+                  Nos encargamos de todo lo relacionado con el personal: nóminas, seguros sociales, retenciones e ingresos a cuenta del IRPF, y asesoramiento laboral con cumplimiento de la normativa.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- SERVICIO 03 -->
+          <article class="service-row row-03">
+            <div class="service-media">
+              <img src="static/images/archivadores.jfif" alt="Asesoría Jurídica y Fiscal">
+            </div>
+            <div class="service-glass glass-light">
+              <div class="service-text-box">
+                <span class="service-step-bg">03</span>
+                <h3 class="service-title">Asesoría Técnica y Normativa</h3>
+                <p class="service-desc">
+                  Ofrecemos orientación en propiedad horizontal, ITE/IEE, instalaciones, seguros y servicios comunes, garantizando el correcto mantenimiento y funcionamiento del edificio.
+                </p>
+              </div>
+            </div>
+          </article>
+
+        </div>
 
       </section>
 
-  </div>
+
+      <footer class="site-footer" id="contacto">
+        <div class="footer-container">
+          
+          <!-- IMAGEN DENTRO DEL PADDING A LA IZQUIERDA -->
+          <div class="footer-image-box">
+            <img src="static/images/fgLogo_white_transparent.png" alt="FG Fincas" class="footer-img">
+          </div>
+
+          <!-- CONTENIDO A LA DERECHA (LISTO PARA RELLENAR) -->
+          <div class="footer-info">
+            <div class="footer-brand">
+              <span class="footer-logo">fg fincas</span>
+              <p class="footer-tagline">Gestión integral y transparente para tu comunidad.</p>
+            </div>
+
+            <div class="footer-columns">
+              <div class="footer-col">
+                <h4 class="footer-heading">Contacto</h4>
+                <p class="footer-text">info@fgfincas.es</p>
+                <p class="footer-text">+34 900 000 000</p>
+              </div>
+              <div class="footer-col">
+                <h4 class="footer-heading">Secciones</h4>
+                <a href="#inicio" class="footer-link">Inicio</a>
+                <a href="#noticias" class="footer-link">Anuncios y Novedades</a>
+                <a href="#servicios" class="footer-link">Servicios</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="footer-bottom">
+          <span>© 2026 fg fincas. Todos los derechos reservados.</span>
+        </div>
+      </footer>
 
 </body>
 </html>
