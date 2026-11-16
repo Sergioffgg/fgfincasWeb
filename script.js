@@ -1,4 +1,36 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // --- 0. SCROLL INERCIAL CON PESO (LENIS) ---
+  if (typeof Lenis !== "undefined") {
+    const lenis = new Lenis({
+      lerp: 0.085,
+      wheelMultiplier: 0.85,
+      smoothWheel: true,
+      syncTouch: false 
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", (e) => {
+        const targetId = anchor.getAttribute("href");
+        if (targetId === "#") {
+          e.preventDefault();
+          lenis.scrollTo(0, { duration: 1.4 });
+          return;
+        }
+        const targetEl = document.querySelector(targetId);
+        if (targetEl) {
+          e.preventDefault();
+          lenis.scrollTo(targetEl, { offset: -40, duration: 1.4 });
+        }
+      });
+    });
+  }
+
   const carousel = document.getElementById("newsCarousel");
   const prevBtn = document.getElementById("carouselPrev");
   const nextBtn = document.getElementById("carouselNext");
