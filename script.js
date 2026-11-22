@@ -349,6 +349,40 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+document.addEventListener('click', (e) => {
+  if (!window.matchMedia('(hover: none) and (pointer: coarse)').matches) return;
+
+  const clickedAction = e.target.closest('.action-btn');
+  const clickedPreview = e.target.closest('.news-preview');
+  const clickedCard = e.target.closest('.news-card');
+
+  // 1. Si pulsa en "Abrir" o "Descargar": solo dejamos pasar si la tarjeta ya estaba abierta de antes (evita clics fantasma en el mismo toque)
+  if (clickedAction) {
+    const isAlreadyOpen = clickedCard && clickedCard.classList.contains('is-active');
+    const openedJustNow = clickedCard && (Date.now() - Number(clickedCard.dataset.activatedAt || 0) < 350);
+
+    if (!isAlreadyOpen || openedJustNow) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    return;
+  }
+
+  // 2. Cierra todas las tarjetas abiertas excepto la que acabamos de tocar en su imagen
+  document.querySelectorAll('.news-card.is-active').forEach((card) => {
+    if (card !== clickedCard || !clickedPreview) {
+      card.classList.remove('is-active');
+      delete card.dataset.activatedAt;
+    }
+  });
+
+  // 3. Si tocó dentro de la imagen (.news-preview) de una tarjeta cerrada, la abre
+  if (clickedPreview && clickedCard && !clickedCard.classList.contains('is-active')) {
+    clickedCard.classList.add('is-active');
+    clickedCard.dataset.activatedAt = String(Date.now());
+  }
+});
+
   /* ==========================================================================
      5. PESTAÑAS DE CONTACTO, LÍNEA ANIMADA Y BOTONES PÍLDORA (SOLO contacto.html)
      ========================================================================== */

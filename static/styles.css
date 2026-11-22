@@ -547,18 +547,27 @@ html.lenis body {
 }
 
 @media (max-width: 870px) {
+  .granate-card {
+    margin-top: 42vh;
+  }
+
+  .hero-brand {
+    top: 4.5vh;
+    right: 5vw;
+  }
+
   .brand-title {
     flex-direction: column;
     gap: 0;
   }
 
   .word-main {
-    font-size: clamp(12rem, 22vw, 14rem);
+    font-size: clamp(7.5rem, 28vw, 11rem);
   }
 
   .word-sub {
-    font-size: clamp(7rem, 12vw, 8rem);
-    margin-bottom: 1rem;
+    font-size: clamp(4.2rem, 15.5vw, 6.5rem);
+    margin-bottom: 0.75rem;
   }
 
   .brand-secondary {
@@ -566,6 +575,7 @@ html.lenis body {
   }
 
   .brand-subtitle {
+    font-size: clamp(1.05rem, 4.2vw, 1.5rem);
     max-width: 100%;
   }
 }
@@ -2342,20 +2352,52 @@ html.lenis body {
     transition: none;
   }
 
-  /* Tarjetas PDF: toque directo sobre la imagen abre el documento */
-  .news-actions-overlay {
+  /* Tarjetas PDF: al tocar la tarjeta aparecen los dos botones (Abrir / Descargar) */
+  .news-preview-link {
     display: none !important;
   }
 
-  .news-preview-link {
-    display: block !important;
-    position: absolute;
-    inset: 0;
-    z-index: 5;
+  .news-card.is-active .news-doc-img {
+    transform: translateY(-22px) scale(1.03);
+    filter: brightness(0.65) blur(1.5px);
+  }
+
+  .news-card.is-active .pdf-badge {
+    opacity: 0;
+  }
+
+  .news-card.is-active .news-actions-overlay {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .news-card.is-active .news-glass-body::before {
+    background-color: var(--rojo);
   }
 
   /* Contacto: oculta botones QR y deja solo "Copiar" */
   .pill-qr {
     display: none !important;
+  }
+
+  .news-card:hover {
+    transform: none;
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.12);
+  }
+
+  .news-card:not(.is-active):hover .news-doc-img {
+    transform: none;
+    filter: none;
+  }
+
+  .news-card:not(.is-active):hover .news-actions-overlay {
+    opacity: 0;
+    transform: translateY(12px);
+    pointer-events: none;
+  }
+
+  .news-card:not(.is-active):hover .pdf-badge {
+    opacity: 1;
   }
 }
