@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>fg fincas | Aviso legal</title>
+
+  <link rel="icon" type="image/png" href="static/images/favicon.png">
+  <link rel="shortcut icon" type="image/png" href="static/images/favicon.png">
+  <link rel="apple-touch-icon" href="static/images/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
+  
+
+  <link rel="stylesheet" href="static/styles.css">
+
+  <style>
+    /* Estilos específicos de lectura editorial para páginas legales */
+    .legal-page-wrapper {
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+      background-color: #ffffff;
+      color: var(--negro);
+      padding: 9rem 5vw 8rem;
+    }
+
+    .legal-container {
+      max-width: 880px;
+      margin: 0 auto;
+    }
+
+    .legal-eyebrow {
+      display: inline-block;
+      font-family: var(--font-subtitulo);
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--granate);
+      margin-bottom: 0.6rem;
+    }
+
+    .legal-main-title {
+      font-family: var(--font-titulo-grande);
+      font-size: clamp(2.4rem, 4.2vw, 3.5rem);
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      color: var(--negro);
+      margin-bottom: 0.75rem;
+    }
+
+    .legal-updated {
+      font-size: 0.9rem;
+      color: rgba(17, 17, 17, 0.55);
+      padding-bottom: 2rem;
+      margin-bottom: 2.5rem;
+      border-bottom: 1px solid rgba(17, 17, 17, 0.12);
+    }
+
+    .legal-content h2 {
+      font-family: var(--font-titulo);
+      font-size: 1.55rem;
+      color: var(--granate);
+      margin-top: 2.4rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .legal-content p {
+      font-size: 0.98rem;
+      line-height: 1.72;
+      color: rgba(17, 17, 17, 0.88);
+      margin-bottom: 1rem;
+    }
+
+    .legal-content ul,
+    .legal-content ol {
+      margin: 0.75rem 0 1.25rem 1.4rem;
+      color: rgba(17, 17, 17, 0.88);
+    }
+
+    .legal-content li {
+      font-size: 0.96rem;
+      line-height: 1.68;
+      margin-bottom: 0.55rem;
+    }
+
+    .legal-id-card {
+      background-color: #f7f6f6;
+      border-left: 3.5px solid var(--granate);
+      border-radius: 0 14px 14px 0;
+      padding: 1.4rem 1.6rem;
+      margin: 1.2rem 0 1.6rem;
+    }
+
+    .legal-id-card p {
+      margin-bottom: 0.45rem;
+      font-size: 0.96rem;
+    }
+
+    .legal-id-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .legal-content a {
+      color: var(--granate);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    @media (max-width: 768px) {
+      .legal-page-wrapper {
+        padding: 7.4rem 1.75rem 6.5rem;
+      }
+    }
+  </style>
+
+  <script>
+    if (window.location.hash) {
+      history.scrollRestoration = "manual";
+      window.scrollTo(0, 0);
+    }
+  </script>
+
+</head>
+<body class="contact-page">
+
+  <nav class="glass-nav nav-top" id="navbar">
+    
+    <!-- LOGO/ICONO -->
+    <a href="#" class="nav-logo-link" aria-label="Ir al inicio">
+      <span class="nav-logo-text">fg fincas</span>
+      <div class="logo-circle-wrapper">
+        <img src="static/images/Profile_picture_logo.png" alt="FG Fincas" class="logo-img-circle">
+      </div>
+    </a>
+
+    <!-- ENLACES DE NAVEGACIÓN (Solo texto limpio, sin flechas) -->
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Inicio</a>
+      <a href="#">Novedades</a>
+      <a href="index.html#servicios">Servicios</a>
+      <a href="contact.html">Contacto</a>
+    </div>
+
+    <!-- BOTÓN DE 3 LÍNEAS / X (Móvil) -->
+    <button class="glass-burger-btn" id="burgerBtn" aria-label="Abrir Menú">
+      <svg class="icon-burger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+      <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+  </nav>
+
+  <!-- SCRIPT DE INTERACCIÓN Y COLAPSO -->
+  <script>
+    const navbar = document.getElementById('navbar');
+    const burgerBtn = document.getElementById('burgerBtn');
+    const navItems = document.querySelectorAll('.nav-links a');
+
+    // Detectar scroll para alternar estados
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.remove('nav-top');
+        navbar.classList.add('nav-floating');
+      } else {
+        navbar.classList.remove('nav-floating');
+        navbar.classList.add('nav-top');
+        navbar.classList.remove('menu-open');
+      }
+    });
+
+    // Botón de 3 líneas / X
+    burgerBtn.addEventListener('click', () => {
+      if (window.scrollY <= 50) {
+        window.scrollTo({ top: 55, behavior: 'smooth' });
+        setTimeout(() => {
+          navbar.classList.add('menu-open');
+        }, 150);
+      } else {
+        navbar.classList.toggle('menu-open');
+      }
+    });
+
+    navItems.forEach(item => {
+      item.addEventListener('click', () => {
+        navbar.classList.remove('menu-open');
+      });
+    });
+  </script>
+
+  <main class="legal-page-wrapper">
+    <div class="legal-container">
+      <span class="legal-eyebrow">Protección de Datos · RGPD y LOPDGDD</span>
+      <h1 class="legal-main-title">Política de Privacidad</h1>
+      <p class="legal-updated">Última actualización: noviembre de 2026</p>
+
+      <div class="legal-content">
+        <h2>1. Información al Usuario</h2>
+        <p>
+          <strong>MARÍA YOLANDA GARCÍA HIDALGO</strong>, como Responsable del Tratamiento, le informa que, conforme a lo dispuesto en el Reglamento (UE) 2016/679, de 27 de abril (RGPD), y en la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales (LOPDGDD), tratará sus datos personales conforme a lo establecido en la presente Política de Privacidad.
+        </p>
+        <p>
+          En este documento explicamos qué datos recogemos cuando usted decide ponerse en contacto con nuestro despacho, para qué los utilizamos, durante cuánto tiempo los conservamos, qué medidas aplicamos para protegerlos y cuáles son sus derechos.
+        </p>
+
+        <h2>2. Responsable del Tratamiento</h2>
+        <p>
+          El responsable del tratamiento de los datos personales recabados a través de los canales de contacto facilitados en este sitio web (<a href="mailto:info@fgfincas.com">info@fgfincas.com</a> · Tel. 913 563 603) es el despacho profesional <strong>FG Administración de Fincas</strong>, cuyos datos identificativos completos se muestran a continuación:
+        </p>
+        <div class="legal-id-image-wrap">
+          <img src="static/images/Datos_identificativos.png" alt="Datos identificativos del titular de FG Administración de Fincas. En caso de no poder visualizar la imagen, puede consultarlos llamando al 913 563 603." style="max-width: 100%; height: auto; border-radius: 12px; display: block;">
+        </div>
+
+        <h2>3. Principios Aplicados en el Tratamiento</h2>
+        <p>En el desempeño de nuestra actividad profesional aplicamos los principios exigidos por el artículo 5 del RGPD:</p>
+        <ul>
+          <li><strong>Licitud, lealtad y transparencia:</strong> Solo tratamos sus datos para fines específicos, explícitos y legítimos, informándole previamente de ello.</li>
+          <li><strong>Minimización de datos:</strong> Solicitamos únicamente los datos estrictamente necesarios para atender su consulta o gestionar la comunidad de propietarios.</li>
+          <li><strong>Exactitud:</strong> Mantenemos los datos actualizados y rectificamos sin dilación aquellos que resulten inexactos.</li>
+          <li><strong>Limitación del plazo de conservación:</strong> Conservamos los datos exclusivamente durante el tiempo necesario para cumplir la finalidad para la que fueron recabados y las obligaciones legales aplicables.</li>
+          <li><strong>Integridad y confidencialidad:</strong> Aplicamos medidas técnicas y organizativas adecuadas para garantizar la seguridad de los datos y evitar su acceso no autorizado, pérdida o alteración.</li>
+        </ul>
+
+        <h2>4. Recogida y Finalidad del Tratamiento</h2>
+        <p>
+          La mera navegación por este sitio web <strong>no implica la recogida automática de datos personales ni el uso de cookies de seguimiento o analítica</strong>. Únicamente trataremos los datos identificativos y de contacto (nombre, teléfono, dirección de correo electrónico o datos relativos a su comunidad) que usted nos facilite voluntariamente al llamarnos por teléfono, escribirnos un correo electrónico o contactarnos mediante mensajería.
+        </p>
+        <p>Tratamos dichos datos con las siguientes finalidades:</p>
+        <ul>
+          <li>Atender y responder las consultas, solicitudes de información o peticiones de presupuesto recibidas.</li>
+          <li>Prestar los servicios profesionales propios de la administración de fincas y gestión integral de comunidades de propietarios.</li>
+          <li>Cumplir con las obligaciones legales, fiscales, contables y colegiales derivadas de la relación profesional.</li>
+        </ul>
+
+        <h2>5. Legitimación del Tratamiento</h2>
+        <p>La base jurídica que legitima el tratamiento de sus datos personales es:</p>
+        <ul>
+          <li><strong>El consentimiento del interesado (art. 6.1.a RGPD):</strong> Otorgado de forma inequívoca al dirigirse voluntariamente a nuestro despacho mediante correo electrónico, llamada telefónica o WhatsApp para realizar una consulta.</li>
+          <li><strong>La ejecución de un contrato o aplicación de medidas precontractuales (art. 6.1.b RGPD):</strong> Cuando el tratamiento sea necesario para formular una propuesta de servicios o gestionar la comunidad de propietarios administrada.</li>
+          <li><strong>El cumplimiento de una obligación legal (art. 6.1.c RGPD):</strong> Aplicable a la conservación de documentación contable, fiscal o derivada de la Ley de Propiedad Horizontal.</li>
+        </ul>
+
+        <h2>6. Plazo de Conservación de los Datos</h2>
+        <p>
+          Los datos proporcionados para consultas informativas se conservarán durante el tiempo estrictamente necesario para atender y resolver su solicitud. En caso de iniciarse una relación profesional o contractual, los datos se conservarán mientras dure dicha relación y, posteriormente, debidamente bloqueados durante los plazos de prescripción exigidos por la legislación fiscal, mercantil y civil vigente.
+        </p>
+
+        <h2>7. Destinatarios y Encargados del Tratamiento</h2>
+        <p>
+          Sus datos personales no serán cedidos a terceros, salvo obligación legal (Administraciones Públicas, Juzgados y Tribunales o entidades bancarias cuando sea necesario para la gestión ordinaria de la comunidad).
+        </p>
+        <p>
+          Para el funcionamiento técnico de este sitio web y las comunicaciones electrónicas, el Responsable cuenta con proveedores tecnológicos (alojamiento web y correo electrónico) que actúan en calidad de Encargados del Tratamiento bajo las garantías contractuales exigidas por el RGPD.
+        </p>
+
+        <h2>8. Derechos de los Usuarios</h2>
+        <p>En cualquier momento puede ejercer gratuitamente los siguientes derechos reconocidos por el RGPD:</p>
+        <ul>
+          <li><strong>Derecho de acceso (art. 15 RGPD):</strong> Conocer si estamos tratando sus datos personales y obtener información sobre dicho tratamiento.</li>
+          <li><strong>Derecho de rectificación (art. 16 RGPD):</strong> Solicitar la corrección de datos inexactos o incompletos.</li>
+          <li><strong>Derecho de supresión (art. 17 RGPD):</strong> Solicitar la eliminación de sus datos cuando ya no sean necesarios para los fines para los que fueron recogidos.</li>
+          <li><strong>Derecho a la limitación del tratamiento (art. 18 RGPD):</strong> Solicitar que se suspenda el tratamiento de sus datos en los supuestos previstos por la ley.</li>
+          <li><strong>Derecho a la portabilidad (art. 20 RGPD):</strong> Recibir sus datos en un formato estructurado y de uso común cuando el tratamiento se base en el consentimiento o en un contrato.</li>
+          <li><strong>Derecho de oposición (art. 21 RGPD):</strong> Oponerse al tratamiento de sus datos por motivos relacionados con su situación particular.</li>
+        </ul>
+        <p>
+          Para ejercer cualquiera de estos derechos, o para retirar el consentimiento prestado en cualquier momento, puede enviar una solicitud escrita junto con una copia de su documento acreditativo de identidad al correo electrónico <a href="mailto:info@fgfincas.com">info@fgfincas.com</a>.
+        </p>
+        <p>
+          Asimismo, si considera que el tratamiento de sus datos personales no se ajusta a la normativa vigente, tiene derecho a presentar una reclamación ante la <strong>Agencia Española de Protección de Datos (AEPD)</strong> a través de su sede electrónica (<a href="https://www.aepd.es" target="_blank" rel="noopener noreferrer">www.aepd.es</a>).
+        </p>
+
+        <h2>9. Actualizaciones de la Política de Privacidad</h2>
+        <p>
+          El Responsable se reserva el derecho a modificar la presente Política de Privacidad para adaptarla a novedades legislativas, jurisprudenciales o criterios de la Agencia Española de Protección de Datos. Cualquier cambio será publicado en esta misma página.
+        </p>
+      </div>
+    </div>
+  </main>
+    
+
+  <!-- MISMO FOOTER GRANATE DE LADO A LADO -->
+      <footer class="site-footer" id="contacto">
+        <div class="footer-container">
+          <div class="footer-image-box">
+            <img src="static/images/fgLogo_white_transparent.png" alt="FG Fincas" class="footer-img">
+          </div>
+          <div class="footer-info">
+            <div class="footer-brand">
+              <span class="footer-logo">fg fincas</span>
+              <p class="footer-tagline">Gestión integral y transparente para tu comunidad.</p>
+            </div>
+
+            <div class="footer-columns">
+              <div class="footer-col">
+                <h4 class="footer-heading">Contacto</h4>
+                <p class="footer-text">info@fgfincas.es</p>
+                <p class="footer-text">+34 913 563 603</p>
+              </div>
+              <div class="footer-col">
+                <h4 class="footer-heading">Secciones</h4>
+                <a href="index.html" class="footer-link">Inicio</a>
+                <a href="news.html" class="footer-link">Anuncios y Novedades</a>
+                <a href="index.html#servicios" class="footer-link">Servicios</a>
+                <a href="contact.html" class="footer-link">Contacto</a>
+              </div>
+              <div class="footer-col">
+                <h4 class="footer-heading">Legal</h4>
+                <a href="legal.html" class="footer-link">Aviso legal</a>
+                <a href="privacy.html" class="footer-link">Politica de privacidad</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-image-box footer-image-right">
+            <img src="static/images/logo_colegio.png" alt="Colegio de Administradores de Fincas" class="footer-img">
+          </div>
+
+        </div>
+
+        <div class="footer-bottom">
+          <span>© 2026 fg fincas. Todos los derechos reservados.</span>
+        </div>
+      </footer>
+
+  <!-- LENIS SCROLL + SCRIPT GENERAL -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
