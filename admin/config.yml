@@ -1,0 +1,71 @@
+backend:
+  name: github
+  repo: Sergioffgg/fgfincasWeb
+  branch: master
+  base_url: https://fgfincas-auth.sergiofergar13.workers.dev
+
+locale: 'es'
+
+# Carpetas por defecto para medios
+media_folder: "static/thumbnails"
+public_folder: "static/thumbnails"
+
+collections:
+  - name: "gestor_noticias"
+    label: "Anuncios y Novedades"
+    files:
+      - label: "Listado de Noticias y Circulares"
+        name: "noticias"
+        file: "noticias.json"
+        fields:
+          - label: "Noticias"
+            name: "noticias"
+            widget: "list"
+            summary: "{{fields.fecha}} — {{fields.titulo}}"
+            fields:
+              - label: "Título de la noticia"
+                name: "titulo"
+                widget: "string"
+                required: true
+
+              - label: "Fecha visible (ej. 22 Noviembre 2026)"
+                name: "fecha"
+                widget: "string"
+                required: true
+
+              - label: "Mes (para el filtro)"
+                name: "mes"
+                widget: "select"
+                options: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
+                required: true
+
+              - label: "Año (para el filtro)"
+                name: "anio"
+                widget: "string"
+                default: "2026"
+                required: true
+
+              - label: "Documento PDF"
+                name: "pdf"
+                widget: "file"
+                media_folder: "/static/documents"
+                public_folder: "static/documents"
+                required: true
+
+              - label: "Imagen de portada"
+                name: "imagen"
+                widget: "image"
+                media_folder: "/static/thumbnails"
+                public_folder: "static/thumbnails"
+                required: true
+
+              - label: "¿Marcar como Urgente?"
+                name: "urgente"
+                widget: "boolean"
+                default: false
+
+              - label: "Etiquetas (ej. Normativa, Subvenciones, Urgente...)"
+                name: "etiquetas"
+                widget: "list"
+                default: ["Circular"]
+                field: { label: "Etiqueta", name: "etiqueta", widget: "string" }

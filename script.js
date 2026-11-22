@@ -139,7 +139,8 @@ document.addEventListener("DOMContentLoaded", () => {
     try {
       const response = await fetch(`noticias.json?v=${Date.now()}`);
       if (!response.ok) throw new Error("No se pudo cargar noticias.json");
-      const noticias = await response.json();
+      const rawData = await response.json();
+      const noticias = Array.isArray(rawData) ? rawData : (rawData.noticias || []);
 
       // A) PORTADA (index.html): pinta las 4 últimas noticias antes del CTA final
       if (carousel) {
