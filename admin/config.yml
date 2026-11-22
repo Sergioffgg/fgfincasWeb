@@ -6,6 +6,10 @@ backend:
 
 locale: 'es'
 
+logo:
+  src: ../static/images/fgLogo_red_transparent.png
+  show_in_header: true
+
 # Carpetas por defecto para medios
 media_folder: "static/thumbnails"
 public_folder: "static/thumbnails"
