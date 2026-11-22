@@ -12,6 +12,19 @@
       "fecha": "22 Noviembre 2026",
       "pdf": "static/documents/circular-nueva-web-fg-fincas.pdf",
       "imagen": "static/thumbnails/buildings2.png"
+    },
+    {
+      "anio": "2026",
+      "urgente": false,
+      "etiquetas": [
+        "Circular",
+        "Subvención"
+      ],
+      "titulo": "Subvenciones rehabilitación energética",
+      "fecha": "12 Octubre 2026",
+      "mes": "Octubre",
+      "pdf": "static/documents/subvenciones-rehabilitación-energética-fg-fincas.pdf",
+      "imagen": "static/thumbnails/captura-de-pantalla-2026-11-22-204830.png"
     }
   ]
 }
