@@ -16,6 +16,13 @@
 
   <link rel="stylesheet" href="static/styles.css">
 
+  <script>
+    if (window.location.hash) {
+      history.scrollRestoration = "manual";
+      window.scrollTo(0, 0);
+    }
+  </script>
+
 </head>
 <body>
 
@@ -35,7 +42,7 @@
       <a href="#">Inicio</a>
       <a href="#noticias">Novedades</a>
       <a href="#servicios">Servicios</a>
-      <a href="#contacto">Contacto</a>
+      <a href="contact.html">Contacto</a>
     </div>
 
     <!-- BOTÓN DE 3 LÍNEAS / X (Móvil) -->
@@ -131,7 +138,7 @@
                 <p class="card-text">
                   Atención directa y personalizada para cada vecino. Conocemos tu finca de primera mano para resolver cualquier incidencia con agilidad.
                 </p>
-                <a href="#contacto" class="card-btn">
+                <a href="contact.html" class="card-btn">
                   Contacto <span class="btn-arrow">></span>
                 </a>
               </div>
@@ -149,7 +156,7 @@
                 <p class="card-text">
                   Nos adaptamos a las necesidades reales de tu comunidad, optimizando presupuestos y ofreciendo soluciones a medida.
                 </p>
-                <a href="#contacto" class="card-btn">
+                <a href="#servicios" class="card-btn">
                   Ver Servicios <span class="btn-arrow">></span>
                 </a>
               </div>
@@ -165,10 +172,10 @@
               <div class="card-content">
                 <h3 class="card-title">Experiencia</h3>
                 <p class="card-text">
-                  Más de 25 años de trayectoria respaldan nuestra gestión legal, contable y técnica, garantizando tranquilidad y solvencia a largo plazo.
+                  Más de 25 años de trayectoria respaldan nuestra gestión legal, contable y técnica, garantizando su tranquilidad a largo plazo.
                 </p>
-                <a href="#contacto" class="card-btn">
-                  Más sobre nosotros <span class="btn-arrow">></span>
+                <a href="news.html" class="card-btn">
+                  Nuestras publicaciones <span class="btn-arrow">></span>
                 </a>
               </div>
               <div class="card-banner-wrapper">
@@ -209,149 +216,11 @@
             </div>
 
            <div class="news-carousel" id="newsCarousel">
-            <!-- TARJETA 1 -->
-            <article class="news-card">
-              <div class="news-preview">
-                <span class="pdf-badge">PDF</span>
-                <img src="static/images/oficinab&w.png" alt="Vista previa normativa" class="news-doc-img">
-                <a href="docs/normativa-1.pdf" target="_blank" rel="noopener" class="news-preview-link" aria-label="Abrir documento normativa 1"></a>
-                <div class="news-actions-overlay">
-                  <a href="docs/normativa-1.pdf" target="_blank" rel="noopener" class="action-btn btn-open">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                      <polyline points="15 3 21 3 21 9"></polyline>
-                      <line x1="10" y1="14" x2="21" y2="3"></line>
-                    </svg>
-                    Abrir
-                  </a>
-                  <a href="docs/normativa-1.pdf" download class="action-btn btn-download">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                      <polyline points="7 10 12 15 17 10"></polyline>
-                      <line x1="12" y1="15" x2="12" y2="3"></line>
-                    </svg>
-                    Descargar
-                  </a>
-                </div>
-              </div>
-              <div class="news-glass-body">
-                <time class="news-date">21 Diciembre 2026</time>
-                <h3 class="news-title">Creación de acometidas como normativa 2026</h3>
-                <div class="news-tags">
-                  <span class="news-tag">Normativa</span>
-                  <span class="news-tag">Construcción</span>
-                </div>
-              </div>
-            </article>
-
-            <!-- TARJETA 2 -->
-            <article class="news-card">
-              <div class="news-preview">
-                <span class="pdf-badge">PDF</span>
-                <img src="static/images/Fachadasb&w.png" alt="Vista previa subvenciones" class="news-doc-img">
-                <a href="docs/normativa-2.pdf" target="_blank" rel="noopener" class="news-preview-link" aria-label="Abrir documento normativa 2"></a>
-                <div class="news-actions-overlay">
-                  <a href="docs/normativa-2.pdf" target="_blank" rel="noopener" class="action-btn btn-open">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                      <polyline points="15 3 21 3 21 9"></polyline>
-                      <line x1="10" y1="14" x2="21" y2="3"></line>
-                    </svg>
-                    Abrir
-                  </a>
-                  <a href="docs/normativa-2.pdf" download class="action-btn btn-download">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                      <polyline points="7 10 12 15 17 10"></polyline>
-                      <line x1="12" y1="15" x2="12" y2="3"></line>
-                    </svg>
-                    Descargar
-                  </a>
-                </div>
-              </div>
-              <div class="news-glass-body">
-                <time class="news-date">14 Noviembre 2026</time>
-                <h3 class="news-title">Ayudas a la rehabilitación energética en edificios</h3>
-                <div class="news-tags">
-                  <span class="news-tag">Subvenciones</span>
-                  <span class="news-tag">Eficiencia</span>
-                </div>
-              </div>
-            </article>
-
-            <!-- TARJETA 3 (URGENTE) -->
-            <article class="news-card is-urgent">
-              <div class="news-preview">
-                <span class="pdf-badge">PDF</span>
-                <img src="static/images/sellob&w.png" alt="Vista previa circular" class="news-doc-img">
-                <a href="docs/normativa-3.pdf" target="_blank" rel="noopener" class="news-preview-link" aria-label="Abrir documento normativa 3"></a>
-                <div class="news-actions-overlay">
-                  <a href="docs/normativa-3.pdf" target="_blank" rel="noopener" class="action-btn btn-open">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                      <polyline points="15 3 21 3 21 9"></polyline>
-                      <line x1="10" y1="14" x2="21" y2="3"></line>
-                    </svg>
-                    Abrir
-                  </a>
-                  <a href="docs/normativa-3.pdf" download class="action-btn btn-download">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                      <polyline points="7 10 12 15 17 10"></polyline>
-                      <line x1="12" y1="15" x2="12" y2="3"></line>
-                    </svg>
-                    Descargar
-                  </a>
-                </div>
-              </div>
-              <div class="news-glass-body">
-                <time class="news-date">02 Noviembre 2026</time>
-                <h3 class="news-title">Modificación Ley de Propiedad Horizontal: Alquiler turístico</h3>
-                <div class="news-tags">
-                  <span class="news-tag">Urgente</span>
-                  <span class="news-tag">Legal</span>
-                </div>
-              </div>
-            </article>
-
-            <!-- TARJETA 4 -->
-            <article class="news-card">
-              <div class="news-preview">
-                <span class="pdf-badge">PDF</span>
-                <img src="static/images/oficinab&w.png" alt="Vista previa mantenimiento" class="news-doc-img">
-                <a href="docs/normativa-4.pdf" target="_blank" rel="noopener" class="news-preview-link" aria-label="Abrir documento normativa 4"></a>
-                <div class="news-actions-overlay">
-                  <a href="docs/normativa-4.pdf" target="_blank" rel="noopener" class="action-btn btn-open">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                      <polyline points="15 3 21 3 21 9"></polyline>
-                      <line x1="10" y1="14" x2="21" y2="3"></line>
-                    </svg>
-                    Abrir
-                  </a>
-                  <a href="docs/normativa-4.pdf" download class="action-btn btn-download">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                      <polyline points="7 10 12 15 17 10"></polyline>
-                      <line x1="12" y1="15" x2="12" y2="3"></line>
-                    </svg>
-                    Descargar
-                  </a>
-                </div>
-              </div>
-              <div class="news-glass-body">
-                <time class="news-date">18 Octubre 2026</time>
-                <h3 class="news-title">Protocolo de revisión obligatoria de calderas comunitarias</h3>
-                <div class="news-tags">
-                  <span class="news-tag">Mantenimiento</span>
-                  <span class="news-tag">Circular</span>
-                </div>
-              </div>
-            </article>
+            <!-- TARJETAS INYECTADAS -->
 
               <!-- NODO FINAL: BOTÓN CIRCULAR "VER TODO" -->
               <div class="carousel-end-cta" id="carouselEndCta">
-                <a href="noticias.html" class="view-all-link" id="viewAllTrigger">
+                <a href="news.html" class="view-all-link" id="viewAllTrigger">
                   <span class="view-all-label">Ver todo</span>
                   
                   <div class="view-all-circle">
@@ -437,13 +306,9 @@
 
       <footer class="site-footer" id="contacto">
         <div class="footer-container">
-          
-          <!-- IMAGEN DENTRO DEL PADDING A LA IZQUIERDA -->
           <div class="footer-image-box">
             <img src="static/images/fgLogo_white_transparent.png" alt="FG Fincas" class="footer-img">
           </div>
-
-          <!-- CONTENIDO A LA DERECHA (LISTO PARA RELLENAR) -->
           <div class="footer-info">
             <div class="footer-brand">
               <span class="footer-logo">fg fincas</span>

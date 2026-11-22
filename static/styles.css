@@ -1,6 +1,23 @@
-/* -+-+-+-+-+-+-+-+-+- 1. FUENTES Y VARIABLES -+-+-+-+-+-+-+-+-+- */
+/* ==========================================================================
+   ÍNDICE DE ESTILOS - FG FINCAS
+   ==========================================================================
+   01. Fuentes y Variables Globales
+   02. Reset, Scrollbar y Lenis Smooth Scroll
+   03. Cabecera y Navegación Liquid Glass (Escritorio + Móvil)
+   04. Fondo Fijo General
+   05. Inicio: Hero y Cuña Granate
+   06. Inicio: Sección de Valores (Tarjetas con Chaflán 45º)
+   07. Inicio: Carrusel de Noticias y Tarjetas PDF
+   08. Inicio: Sección de Servicios (Zigzag Liquid Glass)
+   09. Pie de Página (Footer Granate)
+   10. Página de Contacto (Burbujas, Línea Animada y Píldoras)
+   11. Página de Historial de Anuncios (Timeline y Cuadrícula)
+   12. Adaptación Exclusiva para Dispositivos Táctiles
+   ========================================================================== */
 
-/* ICONO / TÍTULO PRINCIPAL */
+
+/* -+-+-+-+-+-+-+-+-+- 01. FUENTES Y VARIABLES GLOBALES -+-+-+-+-+-+-+-+-+- */
+
 @font-face {
   font-family: 'TituloGrandeFont';
   src: url('fonts/yeseva-one/static/yeseva-one-latin-400-normal.woff2') format('woff2');
@@ -9,7 +26,6 @@
   font-display: swap;
 }
 
-/* TÍTULO SECUNDARIO */
 @font-face {
   font-family: 'TituloSecundarioFont';
   src: url('fonts/yeseva-one/static/yeseva-one-latin-400-normal.woff2') format('woff2');
@@ -19,25 +35,26 @@
 }
 
 :root {
-  /* --- PALETA DE COLORES --- */
+  /* Paleta de colores */
   --granate: #7b1818;
   --rojo: #c40009;
   --blanco: #f9f9f9;
   --negro: #111111;
 
-  /* --- LIQUID GLASS UNIFICADO --- */
+  /* Liquid Glass unificado */
   --glass-bg: rgba(121, 121, 121, 0.08);
   --glass-bg-ahumado: rgba(121, 121, 121, 0.65);
   --glass-border: rgba(255, 255, 255, 0.18);
 
-  /* --- TIPOGRAFÍAS DEL PROYECTO --- */
+  /* Tipografías del proyecto */
   --font-titulo-grande: 'TituloGrandeFont', Georgia, serif;
   --font-titulo: 'TituloSecundarioFont', Georgia, serif;
   --font-subtitulo: 'Cabinet Grotesk', sans-serif;
   --font-cuerpo: "Bricolage Grotesque", sans-serif;
 }
 
-/* -+-+-+-+-+-+-+-+-+- 2. REGLAS GENERALES -+-+-+-+-+-+-+-+-+- */
+
+/* -+-+-+-+-+-+-+-+-+- 02. RESET, SCROLLBAR Y LENIS SMOOTH SCROLL -+-+-+-+-+-+-+-+-+- */
 
 * {
   box-sizing: border-box;
@@ -45,27 +62,15 @@
   padding: 0;
 }
 
-/* Quitar la barra lateral de scroll */
 html::-webkit-scrollbar,
 body::-webkit-scrollbar {
   display: none;
 }
 
-html {
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
+html,
 body {
   scrollbar-width: none;
   -ms-overflow-style: none;
-  background-color: var(--granate);
-  color: var(--blanco);
-  font-family: var(--font-cuerpo);
-  overflow-x: hidden;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
 }
 
 body {
@@ -73,6 +78,9 @@ body {
   color: var(--blanco);
   font-family: var(--font-cuerpo);
   overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 html.lenis,
@@ -88,9 +96,9 @@ html.lenis body {
   overflow: hidden;
 }
 
-/* -+-+-+-+-+-+-+-+-+- 3. CABECERA Y MENÚS DE NAVEGACIÓN -+-+-+-+-+-+-+-+-+- */
 
-/* ESTADO BASE DE LA BARRA (Siempre anclada a su centro para evitar saltos laterales) */
+/* -+-+-+-+-+-+-+-+-+- 03. CABECERA Y NAVEGACIÓN LIQUID GLASS -+-+-+-+-+-+-+-+-+- */
+
 .glass-nav {
   position: fixed;
   z-index: 100;
@@ -99,9 +107,7 @@ html.lenis body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
-  /* Transición simétrica fluida */
-  transition: 
+  transition:
     width 0.5s cubic-bezier(0.16, 1, 0.3, 1),
     height 0.5s cubic-bezier(0.16, 1, 0.3, 1),
     top 0.5s cubic-bezier(0.16, 1, 0.3, 1),
@@ -111,13 +117,12 @@ html.lenis body {
     box-shadow 0.5s ease;
 }
 
-/* 1. ESTADO ARRIBA DEL TODO (Barra ancha plana de lado a lado) */
+/* Estado 1: Arriba del todo (barra ancha plana) */
 .glass-nav.nav-top {
   top: 0;
   width: 100%;
   padding: 1.2rem 5vw;
-  border-radius: 0px;
-  
+  border-radius: 0;
   background: var(--glass-bg-ahumado);
   backdrop-filter: blur(12px) saturate(180%);
   -webkit-backdrop-filter: blur(12px) saturate(180%);
@@ -125,14 +130,13 @@ html.lenis body {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* --- CONTROL DEL LOGO DINÁMICO EN CABECERA --- */
+/* Logo dinámico */
 .nav-logo-link {
   display: flex;
   align-items: center;
   text-decoration: none;
 }
 
-/* Texto mini para estado nav-top */
 .nav-logo-text {
   font-family: var(--font-titulo-grande);
   font-weight: 900;
@@ -142,7 +146,6 @@ html.lenis body {
   transition: opacity 0.3s ease;
 }
 
-/* Círculo blanco para estado nav-floating */
 .logo-circle-wrapper {
   position: relative;
   width: 56px;
@@ -154,9 +157,10 @@ html.lenis body {
   justify-content: center;
   background: rgba(255, 255, 255, 0.1);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
-              border-color 0.3s ease, 
-              box-shadow 0.3s ease;
+  transition:
+    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .logo-img-circle {
@@ -166,22 +170,21 @@ html.lenis body {
   transition: transform 0.4s ease;
 }
 
-/* Efecto Hover en el Círculo */
 .nav-logo-link:hover .logo-circle-wrapper {
   transform: scale(1.08);
   border-color: #ffffff;
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
 }
 
-/* Visibilidad de los logos en estado plano nav-top */
 .glass-nav.nav-top .nav-logo-text {
   display: block;
 }
+
 .glass-nav.nav-top .logo-circle-wrapper {
   display: none;
 }
 
-/* 2. ESTADO SCROLL EN ESCRITORIO (MENU PASTILLA CON CRISTAL UNIFICADO) */
+/* Estado 2: Scroll en escritorio (menú píldora flotante) */
 @media (min-width: 769px) {
   .glass-nav.nav-floating {
     top: 1.2rem;
@@ -189,7 +192,6 @@ html.lenis body {
     max-width: 1150px;
     padding: 0.35rem 2.5rem 0.35rem 0.35rem;
     border-radius: 99px;
-
     background: var(--glass-bg-ahumado);
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
@@ -206,14 +208,12 @@ html.lenis body {
     display: none;
   }
 
-  /* Círculo anclado a la izquierda */
   .glass-nav.nav-floating .logo-circle-wrapper {
     order: 1;
     display: flex;
     margin-right: auto;
   }
 
-  /* Enlaces desplegados hacia la derecha */
   .glass-nav.nav-floating .nav-links {
     order: 2;
     display: flex;
@@ -242,12 +242,8 @@ html.lenis body {
   }
 }
 
-
-/* -+-+-+-+-+-+-+-+-+- ADAPTACIÓN RESPONSIVE MÓVIL (< 768px) -+-+-+-+-+-+-+-+-+- */
-
+/* Navegación móvil (< 768px) */
 @media (max-width: 768px) {
-  
-  /* Botón burbuja */
   .glass-burger-btn {
     display: flex;
     background: transparent;
@@ -274,7 +270,7 @@ html.lenis body {
     display: none;
   }
 
-  /* AL HACER SCROLL EN MÓVIL: Se convierte en la burbuja circular a la derecha */
+  /* Burbuja circular flotante a la derecha */
   .glass-nav.nav-floating {
     top: 1.2rem;
     right: 5vw;
@@ -285,7 +281,6 @@ html.lenis body {
     padding: 0;
     border-radius: 50%;
     justify-content: center;
-    
     background: var(--glass-bg-ahumado);
     backdrop-filter: blur(16px) saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
@@ -298,7 +293,7 @@ html.lenis body {
     display: none;
   }
 
-  /* ESTADO 3: MENÚ DESPLEGABLE EN MÓVIL (Al pulsar la burbuja) */
+  /* Menú desplegado en móvil */
   .glass-nav.nav-floating.menu-open {
     width: 90vw;
     max-width: 500px;
@@ -308,7 +303,6 @@ html.lenis body {
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    
     background: var(--glass-bg-ahumado);
     backdrop-filter: blur(24px) saturate(200%);
     -webkit-backdrop-filter: blur(24px) saturate(200%);
@@ -316,10 +310,10 @@ html.lenis body {
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
   }
 
-  /* Alternancia de iconos (Hamburguesa a X) */
   .glass-nav.nav-floating.menu-open .icon-burger {
     display: none;
   }
+
   .glass-nav.nav-floating.menu-open .icon-close {
     display: block;
   }
@@ -331,7 +325,6 @@ html.lenis body {
     margin: 0;
   }
 
-  /* Enlaces alineados a la izquierda y sin subrayados */
   .glass-nav.nav-floating.menu-open .nav-links {
     display: flex;
     flex-direction: column;
@@ -351,7 +344,6 @@ html.lenis body {
     color: var(--blanco);
     display: block;
     text-align: left;
-    
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     transition: color 0.3s ease, padding-left 0.3s ease;
   }
@@ -364,12 +356,11 @@ html.lenis body {
   .glass-nav.nav-floating.menu-open .nav-links a:hover {
     color: #ffffff;
     padding-left: 0.5rem;
-    text-decoration: none;
   }
 }
 
 
-/* -+-+-+-+-+-+-+-+-+- 4. FONDO FIJO -+-+-+-+-+-+-+-+-+- */
+/* -+-+-+-+-+-+-+-+-+- 04. FONDO FIJO GENERAL -+-+-+-+-+-+-+-+-+- */
 
 .fixed-bg {
   position: fixed;
@@ -385,7 +376,7 @@ html.lenis body {
 }
 
 
-/* -+-+-+-+-+-+-+-+-+- 5. PÁGINA DE INICIO (HERO Y DIAGONAL) -+-+-+-+-+-+-+-+-+- */
+/* -+-+-+-+-+-+-+-+-+- 05. INICIO: HERO Y CUÑA GRANATE -+-+-+-+-+-+-+-+-+- */
 
 .granate-card {
   position: relative;
@@ -442,7 +433,6 @@ html.lenis body {
   margin-bottom: 0.75rem;
 }
 
-/* CONTENEDOR DEL REVELADO DEL SUBTÍTULO */
 .subtitle-wrapper {
   position: relative;
   display: inline-block;
@@ -450,7 +440,6 @@ html.lenis body {
   overflow: hidden;
 }
 
-/* El texto se queda estático mientras la línea viaja */
 .brand-subtitle {
   font-family: var(--font-cuerpo);
   font-size: clamp(1.25rem, 3vw, 2.8rem);
@@ -458,16 +447,13 @@ html.lenis body {
   font-weight: 500;
   line-height: 1.3;
   color: var(--blanco);
-
   border-left: 4px solid var(--blanco);
   padding-left: 1.2rem;
-
   clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
   animation: revealTextStatic 0.9s cubic-bezier(0.77, 0, 0.175, 1) forwards;
   animation-delay: 0.2s;
 }
 
-/* La barra independiente que viaja de derecha a izquierda */
 .reveal-line {
   position: absolute;
   top: 0;
@@ -476,7 +462,6 @@ html.lenis body {
   background-color: var(--blanco);
   box-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
   z-index: 2;
-
   animation: lineScan 0.9s cubic-bezier(0.77, 0, 0.175, 1) forwards;
   animation-delay: 0.2s;
 }
@@ -507,7 +492,6 @@ html.lenis body {
   }
 }
 
-/* ADAPTACIÓN RESPONSIVE HERO */
 @media (max-width: 870px) {
   .brand-title {
     flex-direction: column;
@@ -532,7 +516,8 @@ html.lenis body {
   }
 }
 
-/* -+-+-+-+-+-+-+-+-+- 6. SECCION DE VALORES -+-+-+-+-+-+-+-+-+- */
+
+/* -+-+-+-+-+-+-+-+-+- 06. INICIO: SECCIÓN DE VALORES -+-+-+-+-+-+-+-+-+- */
 
 .card-body {
   background-color: var(--granate);
@@ -559,7 +544,6 @@ html.lenis body {
   color: rgba(255, 255, 255, 0.85);
 }
 
-/* REJILLA FLEXBOX DE 3 COLUMNAS */
 .features-grid {
   display: flex;
   flex-wrap: wrap;
@@ -567,7 +551,6 @@ html.lenis body {
   width: 100%;
 }
 
-/* ENVOLTORIO EXTERIOR (Para proyectar sombra limpia respetando el corte de 45º) */
 .card-outer {
   flex: 1 1 300px;
   display: flex;
@@ -579,7 +562,7 @@ html.lenis body {
   transform: translateY(-8px);
 }
 
-/* TARJETA LIQUID GLASS CON CORTE DE 45 GRADOS EN ESQUINA INFERIOR IZQUIERDA */
+/* Tarjeta Liquid Glass con chaflán de 45º inferior izquierdo */
 .feature-card {
   position: relative;
   width: 100%;
@@ -587,28 +570,14 @@ html.lenis body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  
-  /* Cristal ahumado unificado */
   background: var(--glass-bg-ahumado);
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
-  
-  /* Esquinas superiores y derecha redondeadas */
   border-radius: 22px 22px 22px 0;
-  
-  /* CORTE DE 45 GRADOS EN LA ESQUINA INFERIOR IZQUIERDA (36px x 36px) */
-  clip-path: polygon(
-    0 0, 
-    100% 0, 
-    100% 100%, 
-    56px 100%, 
-    0 calc(100% - 56px)
-  );
-  
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 56px 100%, 0 calc(100% - 56px));
   overflow: hidden;
 }
 
-/* IMAGEN PEGADA ABAJO */
 .card-banner-wrapper {
   position: relative;
   z-index: 1;
@@ -631,19 +600,16 @@ html.lenis body {
   filter: grayscale(40%) contrast(1.05);
 }
 
-/* NUMERACIÓN GIGANTE ABAJO, ENCIMA DE LA FOTO Y CORTADA POR LA TARJETA */
 .feature-card::before {
   content: attr(data-step);
   position: absolute;
-  bottom: -1.4rem; /* Se hunde ligeramente para que el borde inferior de la tarjeta lo corte */
-  left: -2rem;   /* Pegado al borde izquierdo */
-  
+  bottom: -1.4rem;
+  left: -2rem;
   font-size: 21.5rem;
   line-height: 0.8;
   color: rgba(243, 243, 243, 0.43);
-  
   pointer-events: none;
-  z-index: 2; /* ENCIMA de la foto, DEBAJO del texto */
+  z-index: 2;
   transition: transform 0.4s ease, color 0.4s ease;
 }
 
@@ -652,9 +618,8 @@ html.lenis body {
   transform: translateY(-1px);
 }
 
-/* DISTINTAS FUENTES / ESTILOS PARA CADA NÚMERO (01, 02, 03) */
 .feature-card.card-01::before {
-  font-family: var(--font-titulo-grande); /* Yeseva One (Serifa de alto contraste) */
+  font-family: var(--font-titulo-grande);
   font-weight: 400;
   letter-spacing: -0.05em;
 }
@@ -704,10 +669,8 @@ html.lenis body {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  
   padding: 0.2rem 0.45rem;
   margin-left: -0.45rem;
-  
   font-family: var(--font-cuerpo);
   font-size: 0.92rem;
   font-weight: 500;
@@ -715,7 +678,6 @@ html.lenis body {
   text-decoration: none;
   background-color: transparent;
   overflow: hidden;
-  
   transition: background-color 0.35s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease;
 }
 
@@ -733,13 +695,11 @@ html.lenis body {
   width: 100%;
   height: 2px;
   background-color: var(--blanco);
-  
   transform: scaleX(0);
   transform-origin: right center;
   transition: transform 1.1s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* --- ESTADO HOVER --- */
 .card-btn:hover {
   background-color: var(--rojo);
   color: #ffffff;
@@ -753,7 +713,8 @@ html.lenis body {
   transform: translateX(3px);
 }
 
-/* -+-+-+-+-+-+-+-+-+- 7. SECCION DE NOTICIAS -+-+-+-+-+-+-+-+-+- */
+
+/* -+-+-+-+-+-+-+-+-+- 07. INICIO: CARRUSEL DE NOTICIAS Y TARJETAS PDF -+-+-+-+-+-+-+-+-+- */
 
 .section-divider-6deg {
   position: relative;
@@ -762,7 +723,7 @@ html.lenis body {
   z-index: 10;
   background-color: var(--granate);
   clip-path: polygon(0 0, 100% 0, 0 100%);
-  margin-top: 0px;
+  margin-top: 0;
   margin-bottom: calc(-10.5vw - 2px);
   pointer-events: none;
 }
@@ -797,7 +758,6 @@ html.lenis body {
   line-height: 1.5;
   color: var(--negro);
 }
-
 
 .news-carousel-wrapper {
   width: calc(100% + 5vw);
@@ -841,12 +801,6 @@ html.lenis body {
   transform: none;
 }
 
-@media (hover: none) and (pointer: coarse) {
-  .carousel-controls-pc {
-    display: none;
-  }
-}
-
 .news-carousel {
   display: flex;
   align-items: stretch;
@@ -880,6 +834,7 @@ html.lenis body {
   scroll-behavior: auto;
 }
 
+/* CTA final del carrusel con anillo de progreso */
 .carousel-end-cta {
   flex: 0 0 220px;
   min-height: 440px;
@@ -897,7 +852,6 @@ html.lenis body {
   gap: 1rem;
   text-decoration: none;
   color: var(--granate);
-  group: true;
 }
 
 .view-all-label {
@@ -909,7 +863,6 @@ html.lenis body {
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
-/* CÍRCULO CON ANILLO DE PROGRESO */
 .view-all-circle {
   position: relative;
   width: 96px;
@@ -929,7 +882,7 @@ html.lenis body {
 .progress-ring {
   position: absolute;
   inset: 0;
-  transform: rotate(-90deg); /* Empieza arriba a las 12 en punto */
+  transform: rotate(-90deg);
   pointer-events: none;
 }
 
@@ -956,7 +909,6 @@ html.lenis body {
     color 0.25s ease 0s;
 }
 
-/* HOVER EN PC */
 .view-all-link:hover .progress-ring-fill {
   stroke-dashoffset: 0;
   transition: stroke-dashoffset 0.45s cubic-bezier(0.4, 0, 0.2, 1);
@@ -985,7 +937,6 @@ html.lenis body {
   transform: translateY(-3px);
 }
 
-/* Texto auxiliar visible solo en táctil */
 .spring-hint {
   font-family: var(--font-cuerpo);
   font-size: 0.78rem;
@@ -994,21 +945,14 @@ html.lenis body {
   transition: opacity 0.3s ease;
 }
 
-@media (hover: none) and (pointer: coarse) {
-  .spring-hint {
-    opacity: 1;
-  }
-}
-
-/* TARJETA DE NOTICIA (Ancho calculado: 3 enteras + la 4ª asomando en pantalla grande) */
+/* Tarjeta reutilizable de noticia / PDF (compartida entre index.html y news.html) */
 .news-card {
   position: relative;
   display: flex;
   flex-direction: column;
   flex: 0 0 calc((100% - 4rem) / 3.35);
-  min-width: 300px; /* En móvil/tablet se adapta sin aplastarse */
+  min-width: 300px;
   min-height: 440px;
-  
   scroll-snap-align: start;
   border-radius: 24px;
   overflow: hidden;
@@ -1023,7 +967,6 @@ html.lenis body {
   box-shadow: 0 22px 45px rgba(123, 24, 24, 0.22);
 }
 
-/* MITAD SUPERIOR: VISTA PREVIA DEL DOCUMENTO */
 .news-preview {
   position: relative;
   width: 100%;
@@ -1038,16 +981,6 @@ html.lenis body {
   inset: 0;
   z-index: 2;
   display: block;
-}
-
-.news-actions-overlay {
-  z-index: 3;
-}
-
-@media (hover: none) and (pointer: coarse) {
-  .news-actions-overlay {
-    display: none;
-  }
 }
 
 .news-doc-img {
@@ -1084,17 +1017,16 @@ html.lenis body {
   opacity: 0;
 }
 
-/* CAPA DE BOTONES EN HOVER */
+/* Botones flotantes en hover (Abrir / Descargar) */
 .news-actions-overlay {
   position: absolute;
   inset: 0 0 42px 0;
-  z-index: 2;
+  z-index: 3;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.75rem;
   padding: 1rem;
-  
   opacity: 0;
   transform: translateY(12px);
   transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -1120,11 +1052,17 @@ html.lenis body {
   transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
 }
 
-.btn-open {
+.news-actions-overlay .action-btn.btn-open,
+.news-actions-overlay .action-btn.btn-open:hover,
+.news-actions-overlay .action-btn.btn-open:visited {
   background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(10px);
-  color: var(--fondo-oscuro);
+  color: #111111 !important;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.news-actions-overlay .action-btn.btn-open svg {
+  stroke: #111111 !important;
 }
 
 .btn-open:hover {
@@ -1144,7 +1082,7 @@ html.lenis body {
   transform: translateY(-2px);
 }
 
-/* MITAD INFERIOR: LIQUID GLASS OSCURO CON LÍNEA GRANATE QUEBRADA */
+/* Cuerpo inferior Liquid Glass oscuro */
 .news-glass-body {
   position: relative;
   z-index: 3;
@@ -1154,18 +1092,10 @@ html.lenis body {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  
   background: rgba(32, 32, 34, 0.86);
   backdrop-filter: blur(16px) saturate(160%);
   -webkit-backdrop-filter: blur(16px) saturate(160%);
-  
-  clip-path: polygon(
-    0 42px, 
-    82% 42px, 
-    100% 0, 
-    100% 100%, 
-    0 100%
-  );
+  clip-path: polygon(0 42px, 82% 42px, 100% 0, 100% 100%, 0 100%);
 }
 
 .news-glass-body::before {
@@ -1178,15 +1108,7 @@ html.lenis body {
   background-color: var(--granate);
   z-index: 4;
   pointer-events: none;
-  
-  clip-path: polygon(
-    0 42px, 
-    82% 42px, 
-    100% 0, 
-    100% 6px, 
-    calc(82% + 2px) 47px, 
-    0 47px
-  );
+  clip-path: polygon(0 42px, 82% 42px, 100% 0, 100% 6px, calc(82% + 2px) 47px, 0 47px);
   transition: background-color 0.3s ease;
 }
 
@@ -1207,7 +1129,6 @@ html.lenis body {
   line-height: 1.25;
   color: #ffffff;
   margin-bottom: 1.25rem;
-  
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -1231,20 +1152,18 @@ html.lenis body {
   letter-spacing: 0.02em;
 }
 
-/* VARIANTE AUTOMÁTICA PARA TAG "URGENTE" */
+/* Variante Urgente */
 .news-card.is-urgent .news-glass-body {
   background: rgba(105, 16, 16, 0.92);
 }
 
-.news-card.is-urgent .news-glass-body::before {
-  background-color: var(--rojo);
-}
-
+.news-card.is-urgent .news-glass-body::before,
 .news-card.is-urgent .news-tag {
   background-color: var(--rojo);
 }
 
-/* -+-+-+-+-+-+-+-+-+- 8. SECCIÓN DE SERVICIOS (ZIGZAG LIQUID GLASS + CHAFLANES) -+-+-+-+-+-+-+-+-+- */
+
+/* -+-+-+-+-+-+-+-+-+- 08. INICIO: SECCIÓN DE SERVICIOS -+-+-+-+-+-+-+-+-+- */
 
 .services-section {
   position: relative;
@@ -1318,7 +1237,6 @@ html.lenis body {
   flex-direction: column;
   justify-content: center;
   overflow: hidden;
-
   backdrop-filter: blur(22px) saturate(180%);
   -webkit-backdrop-filter: blur(22px) saturate(180%);
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
@@ -1330,7 +1248,6 @@ html.lenis body {
   padding: 2.6rem 5.5rem 2.6rem 5vw;
 }
 
-/* CRISTAL CLARO */
 .glass-light {
   background: rgba(255, 255, 255, 0.42);
   color: var(--negro);
@@ -1338,7 +1255,6 @@ html.lenis body {
   border-bottom: 1px solid rgba(255, 255, 255, 0.35);
 }
 
-/* CRISTAL GRANATE */
 .glass-granate {
   background: rgba(123, 24, 24, 0.54);
   color: var(--blanco);
@@ -1347,36 +1263,17 @@ html.lenis body {
 }
 
 .row-01 .service-glass {
-  clip-path: polygon(
-    44px 0,
-    100% 0,
-    100% 100%,
-    0 100%,
-    44px calc(100% - 44px)
-  );
+  clip-path: polygon(44px 0, 100% 0, 100% 100%, 0 100%, 44px calc(100% - 44px));
 }
 
 .row-02 .service-glass {
-  clip-path: polygon(
-    0 0,
-    calc(100% - 44px) 0,
-    calc(100% - 44px) calc(100% - 44px),
-    100% 100%,
-    0 100%
-  );
+  clip-path: polygon(0 0, calc(100% - 44px) 0, calc(100% - 44px) calc(100% - 44px), 100% 100%, 0 100%);
 }
 
 .row-03 .service-glass {
-  clip-path: polygon(
-    0 0,
-    100% 0,
-    100% 100%,
-    44px 100%,
-    44px 44px
-  );
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 44px 100%, 44px 44px);
 }
 
-/* --- NÚMEROS EDITORIALES (Alineados encima del título en PC) --- */
 .service-step-bg {
   display: block;
   position: relative;
@@ -1396,7 +1293,6 @@ html.lenis body {
   color: var(--blanco);
 }
 
-/* --- TIPOGRAFÍA + SUBRAYADO LENTO EN HOVER --- */
 .service-text-box {
   position: relative;
   margin-left: 30px;
@@ -1405,7 +1301,7 @@ html.lenis body {
 
 .service-title {
   position: relative;
-  display: inline-block; /* Se ajusta al ancho real del titular para que el subrayado sea exacto */
+  display: inline-block;
   font-family: var(--font-subtitulo);
   font-weight: 500;
   font-size: clamp(1.6rem, 2.2vw, 2.05rem);
@@ -1415,7 +1311,6 @@ html.lenis body {
   margin-bottom: 0.85rem;
 }
 
-/* Línea de subrayado animada (idéntica en cadencia a .card-btn::after) */
 .service-title::after {
   content: "";
   position: absolute;
@@ -1444,7 +1339,6 @@ html.lenis body {
   background-color: var(--blanco);
 }
 
-/* Al pasar el cursor por cualquier parte de la tarjeta, se traza el subrayado */
 .service-row:hover .service-title::after {
   transform: scaleX(1);
 }
@@ -1465,7 +1359,6 @@ html.lenis body {
   color: rgba(255, 255, 255, 0.95);
 }
 
-/* --- RESOLUCIONES GRANDES (> 1100px): TARJETAS MÁS DELGADAS Y COMPACTAS --- */
 @media (min-width: 1101px) {
   .services-stack {
     gap: 1.85rem;
@@ -1499,7 +1392,6 @@ html.lenis body {
   }
 }
 
-/* -+-+-+-+-+-+-+-+-+- ADAPTACIÓN RESPONSIVE (< 860px) -+-+-+-+-+-+-+-+-+- */
 @media (max-width: 860px) {
   .services-stack {
     gap: 2.2rem;
@@ -1514,13 +1406,7 @@ html.lenis body {
   .service-media {
     flex: none;
     height: 230px;
-    clip-path: polygon(
-      36px 0,
-      100% 0,
-      100% 100%,
-      0 100%,
-      0 36px
-    );
+    clip-path: polygon(36px 0, 100% 0, 100% 100%, 0 100%, 0 36px);
   }
 
   .row-01 .service-glass,
@@ -1567,28 +1453,26 @@ html.lenis body {
   }
 }
 
-@media (hover: none) and (pointer: coarse) {
-  .service-title::after {
-    transform: scaleX(1);
-    transition: none;
-  }
-}
 
-/* -+-+-+-+-+-+-+-+-+- 9. FOOTER GRANATE CON IMAGEN GRANDE A LA IZQUIERDA -+-+-+-+-+-+-+-+-+- */
+/* -+-+-+-+-+-+-+-+-+- 09. PIE DE PÁGINA (FOOTER GRANATE) -+-+-+-+-+-+-+-+-+- */
 
 .site-footer {
   position: relative;
-  z-index: 10;
+  z-index: 20;
   width: 100vw;
   margin-left: calc(50% - 50vw);
-  margin-top: auto;
+  margin-top: -32px;
   margin-bottom: 0;
   background-color: var(--granate);
-  box-shadow: 0 300px 0 300px var(--granate);
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow:
+    0 -22px 48px rgba(0, 0, 0, 0.42),
+    0 300px 0 300px var(--granate);
   color: var(--blanco);
-  padding: 5rem 5vw 2.5rem;
+  padding: 5.2rem 5vw 2.5rem;
   box-sizing: border-box;
 }
+
 .footer-container {
   display: flex;
   align-items: center;
@@ -1596,7 +1480,6 @@ html.lenis body {
   width: 100%;
 }
 
-/* IMAGEN CUADRADA SIN RECORTAR */
 .footer-image-box {
   flex: 0 0 300px;
   width: 300px;
@@ -1612,11 +1495,10 @@ html.lenis body {
 .footer-img {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* Muestra la imagen cuadrada entera sin recortar ni un píxel */
+  object-fit: contain;
   display: block;
 }
 
-/* CONTENIDO A LA DERECHA */
 .footer-info {
   flex: 1;
   display: flex;
@@ -1675,7 +1557,6 @@ html.lenis body {
   color: #ffffff;
 }
 
-/* LÍNEA INFERIOR */
 .footer-bottom {
   margin-top: 3.5rem;
   padding-top: 1.5rem;
@@ -1696,5 +1577,706 @@ html.lenis body {
     flex: none;
     width: 240px;
     height: 240px;
+  }
+}
+
+
+/* -+-+-+-+-+-+-+-+-+- 10. PÁGINA DE CONTACTO -+-+-+-+-+-+-+-+-+- */
+
+.contact-hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-top: 9rem;
+  padding-bottom: 4.5rem;
+  overflow: hidden;
+}
+
+.contact-bg-wrap {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  z-index: 1;
+}
+
+.contact-bg-img {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+  display: block;
+}
+
+.contact-bg-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.28) 0%,
+    rgba(0, 0, 0, 0.1) 45%,
+    rgba(0, 0, 0, 0.25) 100%
+  );
+}
+
+.contact-diagonal-granate {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background-color: var(--granate);
+  clip-path: polygon(100% 0, 100% 100%, 64% 100%);
+  pointer-events: none;
+}
+
+.contact-stage {
+  position: relative;
+  z-index: 3;
+  width: 58%;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.contact-main-title {
+  font-family: var(--font-titulo-grande);
+  font-size: clamp(3.2rem, 5vw, 4.7rem);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin-bottom: 0.85rem;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+}
+
+.contact-glass-panel {
+  width: 100%;
+  padding: 2.4rem 5vw 2.4rem 2.2rem;
+  background: rgba(255, 255, 255, 0.52);
+  backdrop-filter: blur(22px) saturate(180%);
+  -webkit-backdrop-filter: blur(22px) saturate(180%);
+  border-top: 1px solid rgba(255, 255, 255, 0.85);
+  border-left: 1px solid rgba(255, 255, 255, 0.78);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow: -12px 20px 45px rgba(0, 0, 0, 0.22);
+}
+
+.contact-tabs-layout {
+  display: grid;
+  grid-template-columns: auto 24px 1fr;
+  gap: 1.4rem;
+  align-items: stretch;
+  min-height: 270px;
+}
+
+/* Burbujas selectoras de canal */
+.contact-bubbles {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.2rem 0;
+}
+
+.contact-bubble {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  background: rgba(120, 120, 125, 0.34);
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, 0.14),
+    inset 0 1px 1px rgba(255, 255, 255, 0.55);
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition:
+    background-color 0.35s ease,
+    border-color 0.35s ease,
+    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.35s ease;
+}
+
+.contact-bubble:hover {
+  background: rgba(123, 24, 24, 0.52);
+  border-color: rgba(255, 255, 255, 0.85);
+  transform: scale(1.06);
+}
+
+.contact-bubble.is-active {
+  background: rgba(123, 24, 24, 0.86);
+  border-color: rgba(255, 255, 255, 0.9);
+  box-shadow:
+    0 10px 24px rgba(123, 24, 24, 0.35),
+    inset 0 1px 2px rgba(255, 255, 255, 0.6);
+  transform: scale(1.05);
+}
+
+/* Línea SVG animada */
+.contact-pointer-track {
+  position: relative;
+  width: 24px;
+  height: 100%;
+  color: #ffffff;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.22));
+}
+
+.contact-pointer-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: visible;
+}
+
+/* Paneles de datos */
+.contact-panels {
+  position: relative;
+  padding-left: 0.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-tab-panel {
+  animation: tabFadeSlide 0.38s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.contact-tab-panel[hidden] {
+  display: none;
+}
+
+@keyframes tabFadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.panel-heading {
+  font-family: var(--font-subtitulo);
+  font-size: clamp(1.85rem, 2.6vw, 2.35rem);
+  font-weight: 100;
+  color: #ffffff;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.24);
+  margin-bottom: 1.1rem;
+  line-height: 1.05;
+}
+
+.panel-block {
+  margin-bottom: 1rem;
+}
+
+.panel-sublabel {
+  display: block;
+  font-family: var(--font-subtitulo);
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--blanco);
+  margin-bottom: 0.25rem;
+}
+
+.panel-data-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.panel-data {
+  font-family: var(--font-cuerpo);
+  font-size: 1.42rem;
+  font-weight: 600;
+  color: var(--blanco);
+  margin-bottom: 0.25rem;
+}
+
+/* Botones píldora expansibles (Copiar / QR) */
+.pill-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.pill-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  min-width: 36px;
+  padding: 0 9px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  background: rgba(123, 24, 24, 0.84);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 12px rgba(123, 24, 24, 0.22);
+  color: #ffffff;
+  font-family: var(--font-subtitulo);
+  font-size: 0.8rem;
+  font-weight: 100;
+  cursor: pointer;
+  overflow: hidden;
+  transition:
+    background-color 0.3s ease,
+    border-radius 0.42s cubic-bezier(0.16, 1, 0.3, 1),
+    padding 0.38s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.3s ease;
+}
+
+.pill-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.pill-custom-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  display: block;
+}
+
+.pill-text-wrap {
+  display: grid;
+  grid-template-columns: 0fr;
+  opacity: 0;
+  margin-left: 0;
+  transition:
+    grid-template-columns 0.38s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.26s ease,
+    margin-left 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pill-text {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .pill-btn:not(.is-open):hover {
+    background: var(--granate);
+    padding: 0 14px 0 11px;
+    box-shadow: 0 6px 16px rgba(123, 24, 24, 0.34);
+  }
+
+  .pill-btn:not(.is-open):hover .pill-text-wrap {
+    grid-template-columns: 1fr;
+    opacity: 1;
+    margin-left: 7px;
+  }
+}
+
+.pill-btn.is-copied {
+  background: #1f7a4c !important;
+  padding: 0 14px 0 11px !important;
+}
+
+.pill-btn.is-copied .pill-text-wrap {
+  grid-template-columns: 1fr !important;
+  opacity: 1 !important;
+  margin-left: 7px !important;
+}
+
+/* Tarjeta QR flotante hacia arriba */
+.pill-qr {
+  position: relative;
+  height: 36px;
+  overflow: visible;
+}
+
+.pill-qr-header {
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+}
+
+.pill-qr-box {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 0;
+  width: 156px;
+  padding: 10px;
+  border-radius: 16px;
+  background: rgba(123, 24, 24, 0.96);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+  z-index: 50;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(6px) scale(0.94);
+  transform-origin: bottom left;
+  transition:
+    opacity 0.28s ease,
+    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    visibility 0.28s ease;
+}
+
+.pill-qr.is-open {
+  background: var(--granate);
+  padding: 0 14px 0 11px;
+  z-index: 51;
+}
+
+.pill-qr.is-open .pill-text-wrap {
+  grid-template-columns: 1fr;
+  opacity: 1;
+  margin-left: 7px;
+}
+
+.pill-qr.is-open .pill-qr-box {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+}
+
+.pill-qr-box img {
+  width: 136px;
+  height: 136px;
+  object-fit: contain;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  display: block;
+}
+
+.pill-qr-box small {
+  display: block;
+  text-align: center;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.88);
+  margin-top: 6px;
+}
+
+@media (max-width: 1024px) {
+  .contact-stage {
+    width: 84%;
+  }
+
+  .contact-diagonal-granate {
+    clip-path: polygon(100% 0, 100% 100%, 52% 100%);
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-hero {
+    padding-top: 7.5rem;
+    padding-bottom: 3rem;
+  }
+
+  .contact-stage {
+    width: 92%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .contact-diagonal-granate {
+    clip-path: polygon(100% 18%, 100% 100%, 35% 100%);
+  }
+
+  .contact-glass-panel {
+    padding: 1.6rem 1.4rem 1.8rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.4);
+  }
+
+  .contact-tabs-layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 22px auto;
+    gap: 0.9rem;
+    min-height: 250px;
+  }
+
+  .contact-bubbles {
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0 0.5rem;
+  }
+
+  .contact-bubble {
+    width: 48px;
+    height: 48px;
+  }
+
+  .contact-pointer-track {
+    width: 100%;
+    height: 22px;
+  }
+
+  .contact-panels {
+    padding-left: 0;
+    padding-top: 0.25rem;
+  }
+}
+
+
+/* -+-+-+-+-+-+-+-+-+- 11. PÁGINA DE HISTORIAL DE ANUNCIOS -+-+-+-+-+-+-+-+-+- */
+
+.docs-history-page {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #ffffff;
+  padding-top: 8.5rem;
+  padding-bottom: 8rem;
+  overflow-x: hidden;
+}
+
+/* Fondo editorial superior difuminado hacia blanco */
+.docs-hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 500px;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.docs-hero-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  opacity: 0.28;
+  filter: grayscale(100%) contrast(1.05);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 25%, rgba(0, 0, 0, 0) 100%);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 25%, rgba(0, 0, 0, 0) 100%);
+}
+
+.docs-hero-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.65) 68%,
+    #ffffff 100%
+  );
+}
+
+.docs-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 5vw 0 3vw;
+}
+
+.docs-page-header {
+  margin: 0 0 2.3rem 0 !important;
+  padding-left: 3.1rem;
+}
+
+.docs-main-title {
+  font-family: var(--font-titulo-grande);
+  font-size: clamp(2.4rem, 4.2vw, 3.6rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--negro);
+  margin: 0 !important;
+}
+
+/* Línea de tiempo continua en escritorio */
+.docs-timeline {
+  position: relative;
+}
+
+.docs-timeline-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 100%;
+  display: block;
+  color: var(--granate);
+  pointer-events: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.docs-timeline-svg path {
+  vector-effect: non-scaling-stroke;
+}
+
+.docs-months-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3.8rem;
+}
+
+.docs-month-group {
+  position: relative;
+  padding-left: 3.1rem;
+}
+
+.docs-month-marker {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.45rem;
+}
+
+.docs-month-title {
+  font-family: var(--font-titulo-grande);
+  font-size: clamp(1.55rem, 2.3vw, 2rem);
+  font-weight: 700;
+  color: var(--negro);
+  margin: 0;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.55rem;
+}
+
+.docs-year {
+  color: var(--granate);
+}
+
+.docs-year-sep {
+  color: rgba(123, 24, 24, 0.45);
+  font-weight: 400;
+}
+
+/* Cuadrícula de tarjetas PDF */
+.docs-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.8rem;
+}
+
+.docs-cards-grid .news-card {
+  width: 100%;
+  min-width: 0;
+  flex: initial;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(17, 17, 17, 0.08);
+}
+
+.docs-cards-grid .news-card.is-urgent {
+  border-color: rgba(123, 24, 24, 0.35);
+  box-shadow: 0 14px 34px rgba(123, 24, 24, 0.12);
+}
+
+@media (max-width: 1024px) {
+  .docs-cards-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .docs-history-page {
+    padding-top: 7.2rem;
+    padding-bottom: 6.5rem;
+  }
+
+  .docs-timeline::before,
+  .docs-timeline::after,
+  .docs-timeline-svg,
+  .docs-timeline-svg path {
+    content: none !important;
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+
+  .docs-container {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    padding-left: 1.75rem !important;
+    padding-right: 1.75rem !important;
+  }
+
+  .docs-page-header,
+  .docs-month-group,
+  .docs-month-marker,
+  .docs-main-title,
+  .docs-month-title {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  .docs-page-header {
+    margin-bottom: 1.6rem !important;
+  }
+
+  .docs-months-list {
+    gap: 2.6rem;
+  }
+
+  .docs-month-group::before,
+  .docs-month-group::after,
+  .docs-month-marker::before,
+  .docs-month-marker::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  .docs-month-marker {
+    padding-bottom: 0;
+    margin-bottom: 1.1rem;
+    border: none !important;
+  }
+
+  .docs-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1.35rem;
+  }
+}
+
+
+/* -+-+-+-+-+-+-+-+-+- 12. ADAPTACIÓN EXCLUSIVA PARA DISPOSITIVOS TÁCTILES -+-+-+-+-+-+-+-+-+- */
+
+@media (hover: none) and (pointer: coarse) {
+  /* Oculta flechas de carrusel y muestra pista táctil */
+  .carousel-controls-pc {
+    display: none;
+  }
+
+  .spring-hint {
+    opacity: 1;
+  }
+
+  /* Subrayado de servicios siempre visible sin hover */
+  .service-title::after {
+    transform: scaleX(1);
+    transition: none;
+  }
+
+  /* Tarjetas PDF: toque directo sobre la imagen abre el documento */
+  .news-actions-overlay {
+    display: none !important;
+  }
+
+  .news-preview-link {
+    display: block !important;
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+  }
+
+  /* Contacto: oculta botones QR y deja solo "Copiar" */
+  .pill-qr {
+    display: none !important;
   }
 }

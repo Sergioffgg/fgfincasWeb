@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>fg fincas | Contacto</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
+  
+
+  <link rel="stylesheet" href="static/styles.css">
+
+  <script>
+    if (window.location.hash) {
+      history.scrollRestoration = "manual";
+      window.scrollTo(0, 0);
+    }
+  </script>
+
+</head>
+<body class="contact-page">
+
+  <nav class="glass-nav nav-top" id="navbar">
+    
+    <!-- LOGO/ICONO -->
+    <a href="#" class="nav-logo-link" aria-label="Ir al inicio">
+      <span class="nav-logo-text">fg fincas</span>
+      <div class="logo-circle-wrapper">
+        <img src="static/images/Profile_picture_logo.png" alt="FG Fincas" class="logo-img-circle">
+      </div>
+    </a>
+
+    <!-- ENLACES DE NAVEGACIÓN (Solo texto limpio, sin flechas) -->
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Inicio</a>
+      <a href="index.html#noticias">Novedades</a>
+      <a href="index.html#servicios">Servicios</a>
+      <a href="#">Contacto</a>
+    </div>
+
+    <!-- BOTÓN DE 3 LÍNEAS / X (Móvil) -->
+    <button class="glass-burger-btn" id="burgerBtn" aria-label="Abrir Menú">
+      <svg class="icon-burger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+      <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+  </nav>
+
+  <!-- SCRIPT DE INTERACCIÓN Y COLAPSO -->
+  <script>
+    const navbar = document.getElementById('navbar');
+    const burgerBtn = document.getElementById('burgerBtn');
+    const navItems = document.querySelectorAll('.nav-links a');
+
+    // Detectar scroll para alternar estados
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.remove('nav-top');
+        navbar.classList.add('nav-floating');
+      } else {
+        navbar.classList.remove('nav-floating');
+        navbar.classList.add('nav-top');
+        navbar.classList.remove('menu-open');
+      }
+    });
+
+    // Botón de 3 líneas / X
+    burgerBtn.addEventListener('click', () => {
+      if (window.scrollY <= 50) {
+        window.scrollTo({ top: 55, behavior: 'smooth' });
+        setTimeout(() => {
+          navbar.classList.add('menu-open');
+        }, 150);
+      } else {
+        navbar.classList.toggle('menu-open');
+      }
+    });
+
+    navItems.forEach(item => {
+      item.addEventListener('click', () => {
+        navbar.classList.remove('menu-open');
+      });
+    });
+  </script>
+
+  <!-- SECCIÓN PRINCIPAL DE CONTACTO -->
+  <main class="contact-hero">
+    
+    <!-- IMAGEN DE FONDO DEL DESPACHO -->
+    <div class="contact-bg-wrap">
+      <img src="static/images/contacto.png" alt="Despacho fg fincas" class="contact-bg-img">
+    </div>
+
+    <!-- CUÑA DIAGONAL GRANATE DERECHA -->
+    <div class="contact-diagonal-granate" aria-hidden="true"></div>
+
+    <!-- ESCENARIO CENTRAL: TÍTULO + PANEL LIQUID GLASS CON CUADRÍCULA 2x2 -->
+    <div class="contact-stage">
+      <h1 class="contact-main-title">Contacto</h1>
+
+      <div class="contact-glass-panel">
+        <div class="contact-tabs-layout" id="contactTabs">
+          
+          <!-- COLUMNA / FILA DE BURBUJAS -->
+          <div class="contact-bubbles" role="tablist" aria-label="Canales de contacto">
+            
+            <button type="button" class="contact-bubble is-active" role="tab" aria-selected="true" data-tab="telefono" aria-label="Teléfono">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+            </button>
+
+            <button type="button" class="contact-bubble" role="tab" aria-selected="false" data-tab="correo" aria-label="Correo electrónico">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+              </svg>
+            </button>
+
+            <button type="button" class="contact-bubble" role="tab" aria-selected="false" data-tab="ubicacion" aria-label="Ubicación del despacho">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </button>
+
+            <button type="button" class="contact-bubble" role="tab" aria-selected="false" data-tab="horario" aria-label="Horario de atención">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </button>
+
+          </div>
+
+          <!-- LÍNEA CON PICO DE 45º ANIMADO -->
+          <div class="contact-pointer-track" aria-hidden="true">
+            <svg class="contact-pointer-svg" id="contactPointerSvg" preserveAspectRatio="none">
+              <path id="contactPointerPath" d="" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+
+          <!-- CONTENIDO DE LAS 4 PESTAÑAS (Placeholder base listo para pulir) -->
+          <div class="contact-panels">
+            
+            <section class="contact-tab-panel is-active" id="panel-telefono" role="tabpanel">
+              <h2 class="panel-heading">Teléfono</h2>
+              <div class="panel-block">
+                <span class="panel-sublabel">Despacho</span>
+                  <div class="panel-data-row">
+                    <p class="panel-data">913 563 603</p>
+                    <div class="pill-actions">
+                      <!-- 1. COPIAR -->
+                      <button type="button" class="pill-btn" data-copy="913 563 603" aria-label="Copiar teléfono despacho">
+                        <span class="pill-icon">
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                          </svg>
+                        </span>
+                        <span class="pill-text-wrap">
+                          <span class="pill-text" data-default="Copiar">Copiar</span>
+                        </span>
+                      </button>
+
+                      <!-- 2. QR DESPLEGABLE -->
+                      <button type="button" class="pill-btn pill-qr" aria-expanded="false" aria-label="Mostrar código QR">
+                        <span class="pill-qr-header">
+                          <span class="pill-icon">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                              <rect x="3" y="3" width="7" height="7"></rect>
+                              <rect x="14" y="3" width="7" height="7"></rect>
+                              <rect x="3" y="14" width="7" height="7"></rect>
+                              <path d="M14 14h3v3h-3z"></path>
+                              <path d="M20 14v7h-7"></path>
+                              <path d="M20 20h1"></path>
+                            </svg>
+                          </span>
+                          <span class="pill-text-wrap">
+                            <span class="pill-text">Añadir a contactos</span>
+                          </span>
+                        </span>
+                        <span class="pill-qr-box">
+                          <img src="static/images/qr-telffijo.png" alt="QR teléfono despacho">
+                          <small>Escanea con tu móvil</small>
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+              </div>
+              <div class="panel-block">
+                <span class="panel-sublabel">Móvil / Urgencias</span>
+                <div class="panel-data-row">
+                    <p class="panel-data">619 336 863</p>
+                    <div class="pill-actions">
+                      <!-- 1. COPIAR -->
+                      <button type="button" class="pill-btn" data-copy="619 336 863" aria-label="Copiar teléfono despacho">
+                        <span class="pill-icon">
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                          </svg>
+                        </span>
+                        <span class="pill-text-wrap">
+                          <span class="pill-text" data-default="Copiar">Copiar</span>
+                        </span>
+                      </button>
+
+                      <!-- 2. QR DESPLEGABLE -->
+                      <button type="button" class="pill-btn pill-qr" aria-expanded="false" aria-label="Mostrar código QR">
+                        <span class="pill-qr-header">
+                          <span class="pill-icon">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                              <rect x="3" y="3" width="7" height="7"></rect>
+                              <rect x="14" y="3" width="7" height="7"></rect>
+                              <rect x="3" y="14" width="7" height="7"></rect>
+                              <path d="M14 14h3v3h-3z"></path>
+                              <path d="M20 14v7h-7"></path>
+                              <path d="M20 20h1"></path>
+                            </svg>
+                          </span>
+                          <span class="pill-text-wrap">
+                            <span class="pill-text">Añadir a contactos</span>
+                          </span>
+                        </span>
+                        <span class="pill-qr-box">
+                          <img src="static/images/qr-telfmovil.png" alt="QR teléfono despacho">
+                          <small>Escanea con tu móvil</small>
+                        </span>
+                      </button>
+
+                      <!-- 3. Whatsapp -->
+                      <button type="button" class="pill-btn pill-qr" aria-expanded="false" aria-label="Mostrar código QR">
+                        <span class="pill-qr-header">
+                          <span class="pill-icon">
+                            <span class="pill-icon">
+                              <img src="static/images/whatsappIcon.webp" alt="" class="pill-custom-icon">
+                            </span>
+                          </span>
+                          <span class="pill-text-wrap">
+                            <span class="pill-text">Añadir a Whatsapp</span>
+                          </span>
+                        </span>
+                        <span class="pill-qr-box">
+                          <img src="static/images/qr-whatsapp.png" alt="QR teléfono despacho">
+                          <small>Escanea con tu móvil</small>
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+              </div>
+            </section>
+
+            <section class="contact-tab-panel" id="panel-correo" role="tabpanel" hidden>
+              <h2 class="panel-heading">Correo</h2>
+              <div class="panel-block">
+                <span class="panel-sublabel">Administración general</span>
+                <div class="panel-data-row">
+                    <p class="panel-data">info@fgfincas.com</p>
+                    <div class="pill-actions">
+                      <!-- 1. COPIAR -->
+                      <button type="button" class="pill-btn" data-copy="info@fgfincas.com" aria-label="Copiar teléfono despacho">
+                        <span class="pill-icon">
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                          </svg>
+                        </span>
+                        <span class="pill-text-wrap">
+                          <span class="pill-text" data-default="Copiar">Copiar</span>
+                        </span>
+                      </button>
+                    </div>
+                </div>
+                <span class="panel-sublabel">Personal</span>
+                <div class="panel-data-row">
+                    <p class="panel-data">yolanda@fgfincas.com</p>
+                    <div class="pill-actions">
+                      <!-- 1. COPIAR -->
+                      <button type="button" class="pill-btn" data-copy="yolanda@fgfincas.com" aria-label="Copiar teléfono despacho">
+                        <span class="pill-icon">
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                          </svg>
+                        </span>
+                        <span class="pill-text-wrap">
+                          <span class="pill-text" data-default="Copiar">Copiar</span>
+                        </span>
+                      </button>
+                    </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="contact-tab-panel" id="panel-ubicacion" role="tabpanel" hidden>
+              <h2 class="panel-heading">Visitas</h2>
+              <div class="panel-block">
+                <span class="panel-sublabel">Despacho central</span>
+                <p class="panel-data">Av. de América 37, 610 · Madrid</p>
+              </div>
+            </section>
+
+            <section class="contact-tab-panel" id="panel-horario" role="tabpanel" hidden>
+              <h2 class="panel-heading">Horario</h2>
+              <div class="panel-block">
+                <span class="panel-sublabel">Atención al público</span>
+                <p class="panel-data">Lunes a Jueves: 9:30 – 15:00 · Viernes: 9:30 – 14:30</p>
+              </div>
+            </section>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- MISMO FOOTER GRANATE DE LADO A LADO -->
+      <footer class="site-footer" id="contacto">
+        <div class="footer-container">
+          <div class="footer-image-box">
+            <img src="static/images/fgLogo_white_transparent.png" alt="FG Fincas" class="footer-img">
+          </div>
+          <div class="footer-info">
+            <div class="footer-brand">
+              <span class="footer-logo">fg fincas</span>
+              <p class="footer-tagline">Gestión integral y transparente para tu comunidad.</p>
+            </div>
+
+            <div class="footer-columns">
+              <div class="footer-col">
+                <h4 class="footer-heading">Contacto</h4>
+                <p class="footer-text">info@fgfincas.es</p>
+                <p class="footer-text">+34 900 000 000</p>
+              </div>
+              <div class="footer-col">
+                <h4 class="footer-heading">Secciones</h4>
+                <a href="#inicio" class="footer-link">Inicio</a>
+                <a href="#noticias" class="footer-link">Anuncios y Novedades</a>
+                <a href="#servicios" class="footer-link">Servicios</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="footer-bottom">
+          <span>© 2026 fg fincas. Todos los derechos reservados.</span>
+        </div>
+      </footer>
+
+  <!-- LENIS SCROLL + SCRIPT GENERAL -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
