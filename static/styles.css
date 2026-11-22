@@ -360,6 +360,60 @@ html.lenis body {
 }
 
 
+/*===================== BORRAR =====================*/
+/*===================== BORRAR =====================*/
+/*===================== BORRAR =====================*/
+
+/* -+-+-+-+-+-+-+-+-+- BANNER BAJO CABECERA PLANA (SOLO INICIO + PC) -+-+-+-+-+-+-+-+-+- */
+.nav-rebrand-strip {
+  display: none;
+}
+
+@media (min-width: 901px) {
+  .nav-rebrand-strip {
+    position: fixed;
+    top: 62px;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+    padding: 0.42rem 5vw;
+    background: rgba(123, 24, 24, 0.88);
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+    color: var(--blanco);
+    font-family: var(--font-cuerpo);
+    font-size: 0.82rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    transition: opacity 0.35s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .rebrand-badge {
+    background: rgba(255, 255, 255, 0.16);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 0.1rem 0.55rem;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  /* Desaparece solo cuando la barra pasa a píldora flotante al hacer scroll */
+  .glass-nav.nav-floating + .nav-rebrand-strip {
+    opacity: 0;
+    transform: translateY(-100%);
+    pointer-events: none;
+  }
+}
+
+/*===================== BORRAR =====================*/
+/*===================== BORRAR =====================*/
+/*===================== BORRAR =====================*/
+
 /* -+-+-+-+-+-+-+-+-+- 04. FONDO FIJO GENERAL -+-+-+-+-+-+-+-+-+- */
 
 .fixed-bg {
