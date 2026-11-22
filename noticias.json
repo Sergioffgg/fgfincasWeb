@@ -25,6 +25,19 @@
       "mes": "Octubre",
       "pdf": "static/documents/subvenciones-rehabilitación-energética-fg-fincas.pdf",
       "imagen": "static/thumbnails/captura-de-pantalla-2026-11-22-204830.png"
+    },
+    {
+      "anio": "2026",
+      "urgente": true,
+      "etiquetas": [
+        "Urgente",
+        "Revisiones"
+      ],
+      "titulo": "Limpieza de garajes y revisión de sistemas anti-incendios",
+      "fecha": "2 Agosto 2026",
+      "mes": "Agosto",
+      "pdf": "static/documents/protocolo-mantenimiento-garaje-fg-fincas.pdf",
+      "imagen": "static/thumbnails/captura-de-pantalla-2026-11-22-210136.png"
     }
   ]
 }
