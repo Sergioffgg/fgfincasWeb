@@ -1,4 +1,17 @@
 {
   "noticias": [
+    {
+      "anio": "2026",
+      "urgente": false,
+      "etiquetas": [
+        "Novedades",
+        "Circular"
+      ],
+      "titulo": "Nueva web corporativa 2026",
+      "mes": "Noviembre",
+      "fecha": "22 Noviembre 2026",
+      "pdf": "static/documents/circular-nueva-web-fg-fincas.pdf",
+      "imagen": "static/thumbnails/buildings2.png"
+    }
   ]
 }
