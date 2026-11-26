@@ -4,6 +4,19 @@
       "anio": "2026",
       "urgente": false,
       "etiquetas": [
+        "Agua",
+        "Urgente"
+      ],
+      "titulo": "Nuevo anuncio",
+      "fecha": "26 Noviembre 2026",
+      "mes": "Noviembre",
+      "pdf": "static/documents/subvenciones-rehabilitación-energética-fg-fincas.pdf",
+      "imagen": "static/thumbnails/buildings2.png"
+    },
+    {
+      "anio": "2026",
+      "urgente": false,
+      "etiquetas": [
         "Novedades",
         "Circular"
       ],
@@ -51,19 +64,6 @@
       "mes": "Noviembre",
       "pdf": "static/documents/aviso-urgente-corte-de-agua-fg-fincas.pdf",
       "imagen": "static/thumbnails/captura-de-pantalla-2026-11-22-210532.png"
-    },
-    {
-      "anio": "2026",
-      "urgente": false,
-      "etiquetas": [
-        "Agua",
-        "Urgente"
-      ],
-      "titulo": "Nuevo anuncio",
-      "fecha": "26 Noviembre 2026",
-      "mes": "Noviembre",
-      "pdf": "static/documents/subvenciones-rehabilitación-energética-fg-fincas.pdf",
-      "imagen": "static/thumbnails/buildings2.png"
     }
   ]
 }
