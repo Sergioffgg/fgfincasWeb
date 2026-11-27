@@ -4,19 +4,6 @@
       "anio": "2026",
       "urgente": false,
       "etiquetas": [
-        "Agua",
-        "Urgente"
-      ],
-      "titulo": "Nuevo anuncio",
-      "fecha": "26 Noviembre 2026",
-      "mes": "Noviembre",
-      "pdf": "static/documents/subvenciones-rehabilitación-energética-fg-fincas.pdf",
-      "imagen": "static/thumbnails/buildings2.png"
-    },
-    {
-      "anio": "2026",
-      "urgente": false,
-      "etiquetas": [
         "Novedades",
         "Circular"
       ],
@@ -43,27 +30,14 @@
       "anio": "2026",
       "urgente": false,
       "etiquetas": [
-        "Urgente",
-        "Revisiones"
+        "Certificado",
+        "Folleto"
       ],
-      "titulo": "Limpieza de garajes y revisión de sistemas anti-incendios",
-      "fecha": "2 Agosto 2026",
-      "mes": "Agosto",
-      "pdf": "static/documents/protocolo-mantenimiento-garaje-fg-fincas.pdf",
-      "imagen": "static/thumbnails/captura-de-pantalla-2026-11-22-210136.png"
-    },
-    {
-      "anio": "2026",
-      "urgente": true,
-      "etiquetas": [
-        "Urgente",
-        "Agua"
-      ],
-      "titulo": "Aviso Urgente Corte de Agua",
-      "fecha": "21 Noviembre 2026",
+      "titulo": "Certificado de deudas: No es un mero trámite",
+      "fecha": "27 Noviembre 2026",
       "mes": "Noviembre",
-      "pdf": "static/documents/aviso-urgente-corte-de-agua-fg-fincas.pdf",
-      "imagen": "static/thumbnails/captura-de-pantalla-2026-11-22-210532.png"
+      "pdf": "static/documents/certificado-deudas.-no-es-un-mero-trámite.pdf",
+      "imagen": "static/thumbnails/screenshot-2026-11-27-182436_edited.png"
     }
   ]
 }
