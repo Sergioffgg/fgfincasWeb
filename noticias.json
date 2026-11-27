@@ -4,6 +4,19 @@
       "anio": "2026",
       "urgente": false,
       "etiquetas": [
+        "Certificado",
+        "Folleto"
+      ],
+      "titulo": "Certificado de deudas: No es un mero trámite",
+      "fecha": "27 Noviembre 2026",
+      "mes": "Noviembre",
+      "pdf": "static/documents/certificado-deudas.-no-es-un-mero-trámite.pdf",
+      "imagen": "static/thumbnails/screenshot-2026-11-27-182436_edited.png"
+    },
+    {
+      "anio": "2026",
+      "urgente": false,
+      "etiquetas": [
         "Novedades",
         "Circular"
       ],
@@ -25,19 +38,6 @@
       "mes": "Octubre",
       "pdf": "static/documents/subvenciones-rehabilitación-energética-fg-fincas.pdf",
       "imagen": "static/thumbnails/captura-de-pantalla-2026-11-22-204830.png"
-    },
-    {
-      "anio": "2026",
-      "urgente": false,
-      "etiquetas": [
-        "Certificado",
-        "Folleto"
-      ],
-      "titulo": "Certificado de deudas: No es un mero trámite",
-      "fecha": "27 Noviembre 2026",
-      "mes": "Noviembre",
-      "pdf": "static/documents/certificado-deudas.-no-es-un-mero-trámite.pdf",
-      "imagen": "static/thumbnails/screenshot-2026-11-27-182436_edited.png"
     }
   ]
 }
